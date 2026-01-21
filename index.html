@@ -21,6 +21,21 @@
     }
     *{
         box-sizing:border-box;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    section{
+      width: 95%;
+      display: block;
+      flex-direction: column;
+      margin: auto;
+    }
+    .col-4 .fas,.col-12 .fas{
+      background-color: var(--card);
+      width: 40px;
+      height: 40px;
+      color: var(--accent);  
+      margin: auto;
+      border-radius: 50%;       
     }
     html{
         scroll-behavior:smooth;
@@ -48,9 +63,12 @@
         padding:0 2px;
     }
     header{
-        position:relative; 
+        position:sticky; 
         top:0; 
         z-index:50; 
+        display: flex;
+        flex-direction: row;
+        height: 60px;
         backdrop-filter:saturate(1.2) blur(8px);
         background:linear-gradient(180deg, rgba(15,18,23,.85), rgba(15,18,23,.65));
         border-bottom:1px solid var(--border);
@@ -67,9 +85,16 @@
         gap:12px;
     }
     .avatar{
-        width:36px; 
-        height:36px; 
-        border-radius:50%; 
+        width: 40px; 
+        height:40px; 
+        border-radius:20%; 
+        display: flex;
+        font-weight: 800;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        justify-content: center;
+        color: var(--text);
         background:linear-gradient(135deg, var(--accent), var(--accent-2));
         box-shadow:var(--shadow);
     }
@@ -79,7 +104,11 @@
     }
     .nav ul{
         display:flex; 
-        gap:10px; 
+        gap:10px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; 
+        text-align: center;
         list-style:none; 
         margin:0; 
         padding:0;
@@ -97,12 +126,13 @@
       background:var(--card); 
       color:var(--text);
       padding:8px 10px; 
+      height: 35px;
       border-radius:8px; 
       cursor:pointer;
     }
     /* Hero */
     .hero{
-      padding:70px 0 40px; 
+      padding:50px 0 40px; 
       text-align:center;
     }
     .hero img:hover{
@@ -190,20 +220,30 @@
     .col-12{
       grid-column:span 12;
     }
+    .col-4:hover, .col-6:hover{
+      border: 1px solid white;
+      box-shadow: 0 2px 8px rgb(229, 226, 226);
+    }
     @media (max-width:900px){
       .col-4,.col-6,.col-8{
         grid-column:span 12;
       }
-      .nav{
-        flex-direction:column; 
-        align-items:flex-start; 
-        width: 100%;
+      header .container{
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 95%;
+        justify-content: baseline;
+      }
+      .brand h1{
+        display: none;
       }
       .nav ul{
-        flex-wrap:wrap;
-        gap: 15px;
-        padding: 1rem;
-        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
       }
       #skillRadar{
         width: 100%;
@@ -283,7 +323,6 @@
       width:120px; 
       height:80px; 
       border-radius:10px; 
-      /* background:var(--accent,--accent-2);  */
       border:1px solid var(--border);
       background-image:linear-gradient(135deg, var(--accent), var(--accent-2));
     }
@@ -302,14 +341,19 @@
     }
     .chip{
       font-size:12px; 
+      background-color: var(--accent-2);
       padding:4px 8px; 
       border-radius:999px; 
       border:1px solid var(--border); 
-      color:var(--muted);
+      color:black;
     }
     form{
-      display:grid; 
+      display:flex;
+      flex-direction: column; 
       gap:12px;
+      width: 90%;
+      height: fit-content;
+      margin: 0 auto;
     }
     input, textarea{
       width:100%; 
@@ -346,13 +390,62 @@
       --border:#e6eaf0;
       --shadow:0 10px 30px rgba(0,0,0,.08);
     }
+    #contact {
+      display: flex;
+      flex-direction: row;       
+      justify-content: center;  
+      align-items: center;        
+      width: 80%;
+      gap: 1rem;
+      min-height: 500px;          
+      margin: auto;             
+      padding: 20px;              
+      box-sizing: border-box;     
+    }
+    .condetail{
+      display: flex;
+      width: 400px;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .condetail > div{
+      width: 400px;
+    }
+    #contact .card1{
+      width: 90%;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      justify-content: center;
+      background:var(--card); 
+      border:1px solid var(--border); 
+      border-radius:14px; 
+      padding:16px; 
+      box-shadow:var(--shadow);
+    }
+    @media (max-width: 768px) {
+      #contact {
+        flex-direction: column;
+      }
+      form {
+        width: 100%;
+      }
+      #contact>div{
+        width: 90%;
+        margin: auto;
+      }
+      .condetail>div{
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="avatar" aria-hidden="true"></div>
+        <div class="avatar" aria-hidden="true">SK</div>
         <h1>Shubham Kadam</h1>
       </div>
       <nav>
@@ -368,7 +461,8 @@
   </header>
 
   <section class="hero container">
-    <img src="shubhamimage.png" alt="Shubham Kadam" style="width:200px; height:200px; border-radius:50%; margin:0 auto 70px; box-shadow:0 4px 12px rgba(0,0,0,.3);" />
+    <img src="https://avatars.githubusercontent.com/u/201357751?s=400&u=a97cd351d841dfd0fca99ffe961fbf42d4531130&v=4" alt="Shubham Kadam" style="width:200px; height:200px; border-radius:50%; margin:0 auto 20px; box-shadow:0 4px 12px rgba(0,0,0,.3);" />
+    <h1>Shubham Kadam</h1>
     <p class="tag">Data Analyst • Python • PySpark • Java • R • SQL • PostgreSQL • Oracle • Power BI • Tableau</p>
     <h2>Turning raw data into <span id="rotating"></span></h2>
     <p>Blending analytics rigor with developer versatility—interactive dashboards, clean pipelines, Java‑powered applications, and expressive visual narratives that move stakeholders to action.</p>
@@ -384,64 +478,172 @@
     <div class="cta">
       <a class="btn primary" href="#projects">View projects</a>
       <a class="btn" href="#contact">Contact me</a>
+      <a class="btn primary" href="https://github.com/Asura-824">View GitHub</a>
       <a class="btn" href="RESUME.pdf" download>Download resume</a>
     </div>
   </section>
 
   <section id="about">
-    <div class="container grid">
-      <div class="col-8 card fade">
-        <h2>About Me</h2>
-        <p class="muted">
-          I am a Data Analyst passionate about transforming raw data into meaningful insights. 
-          My expertise spans the full analytics lifecycle—data cleaning, modeling, visualization, and reporting—ensuring 
-          that complex datasets become clear and actionable. 
-          With developer skills as my differentiator, I design interactive experiences, build production-ready pipelines, 
-          develop Java applications, and integrate analytics seamlessly into applications and web platforms.
-        </p>
-        <ul>
-          <li><strong>Core Focus:</strong> Data analysis, visualization, and performance optimization</li>
-          <li><strong>Technical Toolkit:</strong> Python, SQL, R, Power BI, Tableau, PySpark, PostgreSQL</li>
-          <li><strong>Developer Edge:</strong> Java Swing/JDBC for secure applications; HTML, CSS, JavaScript for interactive presentation</li>
-        </ul>
-      </div>
+  <div class="container grid">
 
-      <div class="col-4 card fade">
-        <h2>Professional Highlights</h2>
-        <ul>
-          <li><strong>Dashboards:</strong> Built KPI dashboards that reduced reporting cycles by 40%</li>
-          <li><strong>Pipelines:</strong> Optimized ETL workflows with PySpark for 10M+ rows</li>
-          <li><strong>Visualization:</strong> Delivered clear, well-structured visuals to simplify complex data</li>
-          <li><strong>Java Applications:</strong> Developed secure, user-friendly desktop tools with Swing and JDBC integrated with PostgreSQL</li>
-          <li><strong>Portfolio:</strong> Created and hosted interactive portfolio platforms showcasing projects and compilers</li>
-        </ul>
-      </div>
+    <!-- About Me -->
+    <div class="col-6 card fade">
+      <h2>About Me</h2>
+      <p class="muted">
+        I am a Data Analyst and Developer with a passion for transforming complex datasets into clear, actionable insights that empower smarter decision-making. 
+        My expertise spans the entire analytics lifecycle—from data acquisition and cleaning, through statistical modeling and predictive analysis, to visualization and reporting—ensuring that every stage delivers measurable value. 
+        Beyond analytics, I bring a developer’s mindset, designing interactive dashboards, optimizing production-ready pipelines, and building secure Java applications that integrate seamlessly with modern web and desktop platforms. 
+        By combining analytical rigor with technical versatility, I create solutions that are not only data-driven but also dynamic, scalable, and user-friendly.
+      </p>
     </div>
-  </section>
+
+    <!-- Professional Highlights -->
+    <div class="col-6 card fade">
+      <h2>Professional Highlights</h2>
+      <ul>
+        <li><strong>Dashboards:</strong> Designed KPI dashboards that cut reporting cycles by 40%</li>
+        <li><strong>Pipelines:</strong> Streamlined ETL workflows with PySpark to handle 10M+ rows efficiently</li>
+        <li><strong>Visualization:</strong> Delivered intuitive visuals that simplify complex datasets</li>
+        <li><strong>Java Applications:</strong> Built secure, user-friendly desktop tools with Swing/JDBC integrated with PostgreSQL</li>
+        <li><strong>Portfolio:</strong> Developed and hosted interactive portfolio platforms showcasing projects and compilers</li>
+      </ul>
+    </div>
+
+    <!-- Current Learnings -->
+    <div class="col-6 card fade">
+      <h2>Current Learnings</h2>
+      <ul>
+        <li>Advanced data modeling & optimization</li>
+        <li>Java-powered backend architecture and services</li>
+        <li>Modern web development with React & TypeScript</li>
+      </ul>
+    </div>
+
+    <!-- Education -->
+    <div class="col-6 card fade">
+      <h2>Education</h2>
+      <ul>
+        <li>Bachelor of Science in Computer Science (Expected 2027)</li>
+        <li>Relevant coursework: Data Structures, DBMS, Statistics, Machine Learning, Web Development</li>
+      </ul>
+    </div>
+
+    <div class="col-6 card fade">
+      <h2>Technical Proficiency</h2>
+      <ul>
+        <li><span>Programming Languages:</span> Python, Java, C++, R</li>
+        <li><span>Big Data & Processing:</span> PySpark, SQL</li>
+        <li><span>Databases:</span> PostgreSQL, Oracle</li>
+        <li><span>Data Wrangling & Computation:</span> Pandas, NumPy</li>
+        <li><span>Data Visualization:</span> Matplotlib, Seaborn, Power BI</li>
+        <li><span>Frontend Development:</span> HTML, CSS, JavaScript, React</li>
+        <li><span>Application Development:</span> Java (backend systems, desktop applications)</li>
+      </ul>
+    </div>
+
+    <div class="col-6 card fade">
+      <h2>Real World Projects</h2>
+      <ul>
+        <li>EV adoption analysis in Washington using PySpark & Pandas</li>
+        <li>India Census insights with Python & Power BI</li>
+        <li>Netflix user behavior study with Python libraries</li>
+        <li>Java backend architecture & enterprise services</li>
+        <li>Interactive portfolio platforms with dynamic features</li>
+        <li>Interview prep resources & practice modules</li>
+        <li>Data analysis & ML predictor web app</li>
+        <li>Hub of 100+ innovative project ideas</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
   <section id="skills">
     <h3 class="container fade">Skills</h3>
-    <div class="container card fade">
-      <div>
-        <h3>Technical Skills</h3>
-        <ul>
-          <li>Python</li>
-          <li>PySpark</li>
-          <li>SQL</li>
-          <li>PostgreSQL</li>
-          <li>Oracle</li>
-          <li>Java</li>
-          <li>Pandas</li>
-          <li>NumPy</li>
-          <li>Matplotlib</li>
-          <li>Seaborn</li>
-          <li>R</li>
-          <li>React</li>
-          <li>Power BI</li>
-        </ul>
+    <div class="container grid">
+      <div class="col-4 card fade">
+        <h3><i class="fas fa-code"></i> Languages</h3>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">Java</span>
+          <span class="chip">C++</span>
+          <span class="chip">R</span>
+        </div>
       </div>
-      <div>
-        <h3>Skills Radar</h3>
+
+      <div class="col-4 card fade">
+        <h3><i class="fas fa-tools"></i> Tools</h3>
+        <div class="chips">
+          <span class="chip">Jupyter Notebook</span>
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">Power BI</span>
+        </div>
+      </div>
+
+      <div class="col-4 card fade">
+        <h3><i class="fas fa-database"></i> Databases</h3>
+        <div class="chips">
+          <span class="chip">SQL</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Oracle</span>
+          <span class="chip">MySQL</span>
+        </div>
+      </div>
+
+      <div class="col-4 card fade">
+        <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+        <div class="chips">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+        </div>
+      </div>
+
+      <div class="col-4 card fade">
+        <h3><i class="fas fa-project-diagram"></i> Java Technologies</h3>
+        <div class="chips">
+          <span class="chip">JDBC</span>
+          <span class="chip">Servlets</span>
+          <span class="chip">Swing</span>
+          <span class="chip">JFC</span>
+        </div>
+      </div>
+      <div class="col-4 card fade">
+        <h3><i class="fas fa-robot"></i> Machine Learning</h3>
+        <div class="chips">
+          <span class="chip">Scikit-learn</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">Keras</span>
+          <span class="chip">ML Algorithms</span>
+          <span class="chip">Predictive Modeling</span>
+        </div>
+      </div>
+
+      <div class="col-6 card fade">
+        <h3><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
+        <div class="chips">
+          <span class="chip">Pandas</span>
+          <span class="chip">NumPy</span>
+          <span class="chip">Matplotlib</span>
+          <span class="chip">Seaborn</span>
+          <span class="chip">PySpark</span>
+        </div>
+      </div>
+
+      <div class="col-6 card fade">
+        <h3><i class="fas fa-cube"></i> Core Technologies & Tools</h3>
+        <div class="chips">
+          <span class="chip">Version Control (Git/GitHub)</span>
+          <span class="chip">Jupyter Notebook</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">Data Visualization Stack</span>
+          <span class="chip">Java Ecosystem</span>
+        </div>
+      </div>
+
+      <div class="col-12 card fade">
         <canvas id="skillRadar" width="550" height="550"></canvas>
       </div>
     </div>
@@ -690,9 +892,7 @@
   </section>
   <!-- Contact -->
   <section id="contact">
-    <div class="container card fade">
-      <h3>Contact</h3>
-      <p class="muted">Want to collaborate or review a dashboard? Send a note—I'll reply within 24 hours.</p>
+    <div class="card1">
       <form id="contactForm">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Email" required />
@@ -700,8 +900,16 @@
         <button class="btn primary" type="submit">Send message</button>
       </form>
       <p id="formStatus" class="muted" role="status" style="margin-top:8px;"></p>
-      <p><i class="fab fa-github" aria-hidden="true"></i> GitHub Profile <a href="https://github.com/Asura-824" target="_blank">Asura-824</a></p>
-      <p><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn Profile <a href="https://www.linkedin.com/in/shubham-kadam-701450229/" target="_blank">Shubham Kadam</a></p>
+    </div>  
+    <div class="condetail">
+      <div class="col-8 card fade">
+        <h3>Contact</h3>
+        <p><i class="fab fa-github" aria-hidden="true"></i> GitHub Profile <a href="https://github.com/Asura-824" target="_blank">Asura-824</a></p>
+        <p><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn Profile <a href="https://www.linkedin.com/in/shubham-kadam-b8856031a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDrYMSIRFQeuRzoobVQ4G0g%3D%3D" target="_blank">Shubham Kadam</a></p>
+      </div>
+      <div class="col-8 card fade">
+        <p class="muted">Want to collaborate or review a dashboard? Send a note—I'll reply within 24 hours.</p>
+      </div>
     </div>
   </section>
 
@@ -792,8 +1000,23 @@ const skillChart = new Chart(ctx, {
     }]
   },
   options: {
-      responsive: false,   // disables auto-resize
-    maintainAspectRatio: false,
+      responsive: true,   // disables auto-resize
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Technical Skills Radar Chart',   // <-- Your chart title here
+          font: {
+            size: 20, 
+            weight: 'bold'
+          },
+          color: '#666666', // optional styling
+          padding: {
+            top: 10,
+            bottom: 30
+          }
+        }
+      },
       scales: {
         r: {
           angleLines: { 
@@ -810,15 +1033,13 @@ const skillChart = new Chart(ctx, {
             }
           },
           ticks:{
-            display:false
+            display:false,
           },
           suggestedMin: 0,
           suggestedMax: 100
         }
       }
-    }
-
-});
+}});
 function updateChartColors() {
   skillChart.data.datasets[0].backgroundColor = getAccentColor();
   skillChart.update();

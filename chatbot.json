@@ -128,7 +128,5 @@
     "Good bye": "Goodbye! happy coding!",
     "Lets meet again": "Sure! I'm always here to help you with web development and data science topics. Just reach out whenever you need assistance."
   },
-  "default": {
-    "default": "Hmm... I didn't get that specific query. Try rephrasing or asking for one of the main topics I have detailed descriptions for: **HTML, CSS, JavaScript, Python, Data Science, NumPy, Pandas, Matplotlib, Seaborn, or Scikit-learn!**"
-  }
+  "default": "Sorry, I didn’t get that. Ask me about HTML, CSS, JavaScript, Python, or Data Science topics."
 }

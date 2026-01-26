@@ -1184,7 +1184,6 @@ function updateChartColors() {
   skillChart.update();
 }
 
-// Example: listen for theme toggle
 document.querySelector("#themeToggle").addEventListener("click", () => {
   document.documentElement.toggleAttribute("data-theme", "dark");
   updateChartColors();
@@ -1192,15 +1191,18 @@ document.querySelector("#themeToggle").addEventListener("click", () => {
 
 let botData = { default: "⚠️ Error loading chatbot data." };
 
+
 fetch('chatbot.json')
   .then(res => res.json())
   .then(data => botData = data)
   .catch(err => console.error('Failed to load chatbot.json:', err));
+
 const bubble = document.getElementById("chatbot-bubble");
 const chatbot = document.getElementById("chatbot");
 const chatBox = document.getElementById("messages");
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
+
 
 bubble.addEventListener("click", () => {
   chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
@@ -1213,7 +1215,8 @@ sendBtn.addEventListener("click", () => {
   respondToUser(message.toLowerCase());
   userInput.value = "";
 });
-// Add message to chat box
+
+
 function addMessage(sender, text) {
   const msg = document.createElement("div");
   msg.classList.add("message", sender);
@@ -1224,25 +1227,50 @@ function addMessage(sender, text) {
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
-// Fuzzy match user input to JSON keys
+
+
+function normalize(str) {
+  return str.toLowerCase().replace(/[^\w\s]/gi, '').trim();
+}
+
+
+function similarity(a, b) {
+  const setA = new Set(a.split(" "));
+  const setB = new Set(b.split(" "));
+  const intersection = [...setA].filter(x => setB.has(x)).length;
+  const union = new Set([...setA, ...setB]).size;
+  return intersection / union;
+}
+
+
 function respondToUser(input) {
+  input = normalize(input);
   let bestMatch = null;
   let bestScore = 0;
+
+  if (input === "yes") {
+    setTimeout(() => addMessage("bot", "Great! Let's start learning"), 600);
+    return;
+  }
+
   for (const category in botData) {
     if (category === "default") continue;
     for (const key in botData[category]) {
-      const keyWords = key.toLowerCase().split(" ");
-      let score = 0;
-      keyWords.forEach(word => {
-        if (input.includes(word)) score++;
-      });
+      const score = similarity(input, normalize(key));
       if (score > bestScore) {
         bestScore = score;
         bestMatch = botData[category][key];
       }
     }
   }
-  const reply = bestMatch || botData["default"];
+
+  let reply;
+  if (bestMatch && bestScore > 0.3) {
+    reply = bestMatch;
+  } else {
+    reply = botData.default; 
+  }
+
   setTimeout(() => addMessage("bot", reply), 600);
 }
 </script>

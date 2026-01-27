@@ -447,7 +447,7 @@
       bottom: 20px;
       right: 20px;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: white;
+      color: rgb(0, 0, 0);
       font-size: 24px;
       width: 50px;
       display: flex;
@@ -516,6 +516,8 @@
     #user-input {
       width: 70%;
       padding: 5px;
+      outline: none;
+      color: var(--header-text);
       border-radius: 5px;
       font-size: 14px;
     }
@@ -547,11 +549,12 @@
 
     .chatbot-logo{
       background-color: var(--accent-2);
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       display: flex;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      padding: 0.5rem;
       font-weight: 700;
       flex-direction: column;
       align-items: center;
@@ -1041,12 +1044,13 @@
       <div id="messages">
         <div id="chatbot-header">
           <span class="chatbot-logo">SG</span>
-          <h4>Welcome to NeuraSG</h4>
+          <h4>Welcomes to NeuraSG</h4>
         </div>
       </div>
-      <input type="text" id="user-input" placeholder="Type a message..." />
+      <input type="text" id="user-input" placeholder="Start conversation..." />
       <button id="send-btn">Send</button>
     </div>
+    <p style="font-size: 12px; text-align: center;">Smart insights, seamless conversations.</p>
   </div>
   <footer>
     <div class="container">
@@ -1185,9 +1189,7 @@ document.querySelector("#themeToggle").addEventListener("click", () => {
   updateChartColors();
 });
 
-let botData = { default: "⚠️ Error loading chatbot data." };
-
-
+let botData = {};
 fetch('chatbot.json')
   .then(res => res.json())
   .then(data => botData = data)
@@ -1199,9 +1201,12 @@ const chatBox = document.getElementById("messages");
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
 
-
 bubble.addEventListener("click", () => {
-  chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+  if (chatbot.style.display === "none" || chatbot.style.display === "") {
+    chatbot.style.display = "block";  
+  } else {
+    chatbot.style.display = "none";   
+  }
 });
 
 sendBtn.addEventListener("click", () => {
@@ -1211,7 +1216,6 @@ sendBtn.addEventListener("click", () => {
   respondToUser(message.toLowerCase());
   userInput.value = "";
 });
-
 
 function addMessage(sender, text) {
   const msg = document.createElement("div");
@@ -1224,11 +1228,9 @@ function addMessage(sender, text) {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-
 function normalize(str) {
   return str.toLowerCase().replace(/[^\w\s]/gi, '').trim();
 }
-
 
 function similarity(a, b) {
   const setA = new Set(a.split(" "));
@@ -1237,7 +1239,6 @@ function similarity(a, b) {
   const union = new Set([...setA, ...setB]).size;
   return intersection / union;
 }
-
 
 function respondToUser(input) {
   input = normalize(input);
@@ -1264,11 +1265,20 @@ function respondToUser(input) {
   if (bestMatch && bestScore > 0.3) {
     reply = bestMatch;
   } else {
-    reply = botData.default; 
+    reply = botData.default;
   }
 
   setTimeout(() => addMessage("bot", reply), 600);
 }
+
+document.addEventListener("click", (event) => {
+  if (!chatbot.contains(event.target) && !bubble.contains(event.target)) {
+    const messages = chatBox.querySelectorAll(".message");
+    messages.forEach(msg => msg.remove());
+    chatbot.style.display = "none";
+  }
+});
+
 </script>
 </body>
 </html>

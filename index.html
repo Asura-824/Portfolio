@@ -7,6 +7,10 @@
   <link rel="icon" style="border-radius:50%;" href="shubhamimage.png" type="image/jpg">
   <meta name="description" content="Data Analyst portfolio showcasing dashboards, analytics projects, and interactive visualizations."/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Include Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Dashboard icon -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root{
@@ -38,11 +42,11 @@
       justify-content: center;
       overflow: auto;
     }
-    #skills .highlight, #projects .highlight, #about .highlight{
+    #skills .highlight, #projects .highlight, #about .highlight, #contact .highlight{
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 700;
     }
-    #skills p, #projects #p1, #about #p1 {
+    #skills p, #projects #p1, #about #p1, #contact #p2 {
       text-align: center;
       padding: 2rem;
       font-size: auto;
@@ -151,12 +155,14 @@
       cursor:pointer;
     }
     .icon {
-      background-color: var(--accent-light);   /* light pink background */
-      color: var(--accent);              /* deep pink icon */
-      font-size: 1rem;             /* size of the cap */
-      padding: 10px;               /* spacing around icon */
-      border-radius: 10px;         /* rounded square */
+      background-color: var(--accent-light);   
+      color: var(--accent);              
+      font-size: 1rem;             
+      padding: 10px;               
+      border-radius: 10px;         
       display: inline-flex;
+      width: 50px;                            /* fixed width */
+      height: 50px;
       justify-content: center;
       align-items: center;
     }
@@ -166,7 +172,9 @@
       text-align:center;
     }
     .hero h1{
-      font-size: clamp(2rem, 6vw, 3rem);
+      font-size: clamp(2rem, 6vw, 5rem);
+      padding: 0%;
+      margin: 0%;
     }
     .hero img:hover{
       transform:scale(1.18);
@@ -220,6 +228,9 @@
     .btn{
       padding:10px 14px; 
       border-radius:10px; 
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 50px;
       border:1px solid var(--border);
       background:var(--card); 
       color:var(--text); 
@@ -310,6 +321,22 @@
     .muted{
       color:var(--muted);
     }
+    .muted1{
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      padding: 0%;
+    }
+    .circle::marker {
+      color: var(--accent);       /* marker only */
+      list-style-type: circle;
+    }
+    .muted li::marker{
+      font-size: 1.2rem;
+    }
     #skills .container.card{
       display:flex; 
       flex-direction:column; 
@@ -382,9 +409,19 @@
       display:flex;
       flex-direction: column; 
       gap:12px;
-      width: 90%;
-      height: fit-content;
-      margin: 0 auto;
+      width: 100%;
+      height: max-content;
+      margin: auto;
+    }
+    .muted2{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0%;
+      width: 100%;
+      gap: 1rem;
+      margin: auto;
+      justify-content: center;
     }
     input, textarea{
       width:100%; 
@@ -400,6 +437,7 @@
     footer{
       padding:24px 0; 
       text-align:center; 
+      border-top: 1px solid var(--border);
       color:var(--muted);
     }
     .fade{
@@ -419,20 +457,17 @@
       --muted:#4b5565; 
       --accent:#ff0088; 
       --accent-2:#af8f97; 
-      --accent-light:rgba(255, 20, 145, 0.627);
+      --accent-light:rgba(255, 20, 145, 0.488);
       --header-bg:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.65));
       --border:#e6eaf0;
       --shadow:0 10px 30px rgba(0,0,0,.08);
     }
     #contact {
       display: flex;
-      flex-direction: row;       
+      flex-direction: column;       
       justify-content: center;  
-      align-items: center;        
-      gap: 1rem;
-      min-height: 500px;          
-      margin: auto;             
-      padding: 20px;              
+      align-items: center;               
+      margin: auto;                          
       box-sizing: border-box;     
     }
     .condetail{
@@ -442,24 +477,25 @@
       gap: 1rem;
     }
     .condetail > div{
-      width: 400px;
+      width: 500px;
     }
     #contact .card1{
-      width: 100%;
-      height: 350px;
+      width: 600px;
+      height: 500px;
       display: flex;
       flex-direction: column;
       margin: auto;
       justify-content: center;
       background:var(--card); 
-      border:1px solid var(--border); 
       border-radius:14px; 
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
       padding:16px; 
-      box-shadow:var(--shadow);
     }
     @media (max-width: 768px) {
       #contact {
-        flex-direction: column;
+        width: 95%;
+        overflow: hidden;
       }
       form {
         width: 100%;
@@ -468,8 +504,21 @@
         width: 100%;
         margin: auto;
       }
+      #contact .card1{
+        width: 95%;
+        height: 90%;
+      }
+      .condetail{
+        width: 95%;
+      }
       .condetail>div{
         width: 100%;
+      }
+      .muted2{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        height: max-content;
       }
     }
     /* Chat bubble */
@@ -617,7 +666,7 @@
   </header>
 
   <section class="hero container">
-    <img src="https://avatars.githubusercontent.com/u/201357751?s=400&u=a97cd351d841dfd0fca99ffe961fbf42d4531130&v=4" alt="Shubham Kadam" style="width:150px; height:150px; border-radius:50%; margin:0 auto 30px; box-shadow:0 4px 12px rgba(0,0,0,.3);" />
+    <img src="https://avatars.githubusercontent.com/u/201357751?s=400&u=a97cd351d841dfd0fca99ffe961fbf42d4531130&v=4" alt="Shubham Kadam" style="width:170px; height:170px; border-radius:50%; margin:auto; box-shadow:0 4px 12px rgba(0,0,0,.3);" />
     <h1>Shubham Kadam</h1>
     <p class="tag">
       <strong>Data Analyst</strong> — Skilled in Python, PySpark, Java, R, SQL, PostgreSQL, Oracle, Power BI, and Tableau
@@ -637,7 +686,7 @@
       <a class="btn primary" href="#projects">View projects</a>
       <a class="btn" href="#contact">Contact me</a>
       <a class="btn primary" href="https://github.com/Asura-824">View GitHub</a>
-      <a class="btn" href="RESUME.pdf" download>Download resume</a>
+      <a class="btn" href="RESUME.pdf" download>Download Resume</a>
     </div>
   </section>
 
@@ -649,23 +698,51 @@
         <!-- About Me -->
         <div class="col-6 card fade">
           <h2 style="color: var(--accent);">Who I Am</h2>
-          <p class="muted">
+          <p class="muted" style="padding: 0.5rem;">
             I am a Data Analyst and Developer with a passion for transforming complex datasets into clear, actionable insights that empower smarter decision-making. <br><br>
             My expertise spans the entire analytics lifecycle—from data acquisition and cleaning, through statistical modeling and predictive analysis, to visualization and reporting—ensuring that every stage delivers measurable value. <br><br>
-            Beyond analytics, I bring a developer’s mindset, designing interactive dashboards, optimizing production-ready pipelines, and building secure Java applications that integrate seamlessly with modern web and desktop platforms. 
+            Beyond analytics, I bring a developer’s mindset, designing interactive dashboards, optimizing production-ready pipelines, and building secure Java applications that integrate seamlessly with modern web and desktop platforms. <br><br>
+            By combining analytical rigor with technical versatility, I create solutions that are not only data-driven but also dynamic, scalable, and user-friendly.
           </p>
         </div>
 
         <!-- Professional Highlights -->
         <div class="col-6 card fade">
           <h2 style="color: var(--accent);">Professional Highlights</h2>
-          <ul class="muted">
-            <li><strong>Dashboards:</strong> Designed KPI dashboards that cut reporting cycles by 40%</li>
-            <li><strong>Pipelines:</strong> Streamlined ETL workflows with PySpark to handle 10M+ rows efficiently</li>
-            <li><strong>Visualization:</strong> Delivered intuitive visuals that simplify complex datasets</li>
-            <li><strong>Java Applications:</strong> Built secure, user-friendly desktop tools with Swing/JDBC integrated with PostgreSQL</li>
-            <li><strong>Portfolio:</strong> Developed and hosted interactive portfolio platforms showcasing projects and compilers</li>
-          </ul>
+          <div class="muted">
+            <div class="muted1">
+              <div class="icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div>
+                <p><span style="color: var(--accent);">Dashboards</span><br>Designed KPI dashboards that cut reporting cycles by 40%</p>
+              </div>
+            </div>
+            <div class="muted1">
+              <div class="icon" style="width: 57px;">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <div>
+                <p><span style="color: var(--accent);">Pipelines</span><br>Streamlined ETL workflows with PySpark to handle 10M+ rows efficiently</p>
+              </div>
+            </div>
+            <div class="muted1">
+              <div class="icon" style="width: 60px;">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <div>
+                <p><span style="color: var(--accent);">Visualization</span><br>Created intuitive visualizations that made complex datasets easy to understand.</p>
+              </div>
+            </div>
+            <div class="muted1">
+              <div class="icon" style="width: 63px;">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <div>
+                <p><span style="color: var(--accent);">Java Apps</span><br>Built secure, user-friendly desktop tools with Swing/JDBC integrated with PostgreSQL</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Current Learnings -->
@@ -675,10 +752,10 @@
               <i class="fa-solid fa-book-open"></i>
             </div>
             Current Learnings</h2>
-          <ul class="muted">
-            <li>Advanced data modeling & optimization</li>
-            <li>Java-powered backend architecture and services</li>
-            <li>Modern web development with React & TypeScript</li>
+          <ul class="muted" style="padding: 0.5rem;">
+            <li class="circle">Advanced data modeling & optimization</li>
+            <li class="circle">Java-powered backend architecture and services</li>
+            <li class="circle">Modern web development with React & TypeScript</li>
           </ul>
         </div>
 
@@ -690,36 +767,36 @@
             </div>
             Education
           </h2>
-          <ul class="muted">
-            <li>Bachelor of Science in Computer Science (Expected 2027)</li>
-            <li>Relevant coursework: Data Structures, DBMS, Statistics, Machine Learning, Web Development</li>
+          <ul class="muted" style="padding: 0.5rem;">
+            <li class="circle">Bachelor of Science in Computer Science (Expected 2027)</li>
+            <li class="circle">Relevant coursework: Data Structures, DBMS, Statistics, Machine Learning, Web Development</li>
           </ul>
         </div>
 
         <div class="col-6 card fade">
           <h2 style="color: var(--accent);">Technical Proficiency</h2>
-          <ul class="muted">
-            <li><span>Programming Languages:</span> Python, Java, C++, R</li>
-            <li><span>Big Data & Processing:</span> PySpark, SQL</li>
-            <li><span>Databases:</span> PostgreSQL, Oracle</li>
-            <li><span>Data Wrangling & Computation:</span> Pandas, NumPy</li>
-            <li><span>Data Visualization:</span> Matplotlib, Seaborn, Power BI</li>
-            <li><span>Frontend Development:</span> HTML, CSS, JavaScript, React</li>
-            <li><span>Application Development:</span> Java (backend systems, desktop applications)</li>
+          <ul class="muted" style="padding: 0.5rem;">
+            <li class="circle"><span>Programming Languages:</span> Python, Java, C++, R</li>
+            <li class="circle"><span>Big Data & Processing:</span> PySpark, SQL</li>
+            <li class="circle"><span>Databases:</span> PostgreSQL, Oracle</li>
+            <li class="circle"><span>Data Wrangling & Computation:</span> Pandas, NumPy</li>
+            <li class="circle"><span>Data Visualization:</span> Matplotlib, Seaborn, Power BI</li>
+            <li class="circle"><span>Frontend Development:</span> HTML, CSS, JavaScript, React</li>
+            <li class="circle"><span>Application Development:</span> Java (backend systems, desktop applications)</li>
           </ul>
         </div>
 
         <div class="col-6 card fade">
           <h2 style="color: var(--accent);">Real World Projects</h2>
-          <ul class="muted">
-            <li>EV adoption analysis in Washington using PySpark & Pandas</li>
-            <li>India Census insights with Python & Power BI</li>
-            <li>Netflix user behavior study with Python libraries</li>
-            <li>Java backend architecture & enterprise services</li>
-            <li>Interactive portfolio platforms with dynamic features</li>
-            <li>Interview prep resources & practice modules</li>
-            <li>Data analysis & ML predictor web app</li>
-            <li>Hub of 100+ innovative project ideas</li>
+          <ul class="muted" style="padding: 0.5rem;">
+            <li class="circle">EV adoption analysis in Washington using PySpark & Pandas</li>
+            <li class="circle">India Census insights with Python & Power BI</li>
+            <li class="circle">Netflix user behavior study with Python libraries</li>
+            <li class="circle">Java backend architecture & enterprise services</li>
+            <li class="circle">Interactive portfolio platforms with dynamic features</li>
+            <li class="circle">Interview prep resources & practice modules</li>
+            <li class="circle">Data analysis & ML predictor web app</li>
+            <li class="circle">Hub of 100+ innovative project ideas</li>
           </ul>
         </div>
       </div>
@@ -727,7 +804,7 @@
   </section>
 <section id="skills">
   <div>
-    <p><span style="color: var(--accent);">TECHNICAL PROFICIENCY</span><br><span class="highlight">Skills & Technologies</span><br>A comprehensive toolkit built through hands-on experience with modern data technologies and development best practices.</p>
+    <br><p><span style="color: var(--accent);">TECHNICAL PROFICIENCY</span><br><span class="highlight">Skills & Technologies</span><br>A comprehensive toolkit built through hands-on experience with modern data technologies and development best practices.</p>
     <div class="container grid">
       <div class="col-4 card fade">
         <h3><i class="fas fa-code"></i> Languages</h3>
@@ -819,7 +896,7 @@
 
   <section id="projects">
     <div>
-      <p id="p1"><span style="color: var(--accent);">PORTFOLIO</span><br><span class="highlight">Featured Projects</span><br>A selection of projects showcasing my skills in data analysis, visualization, and software development.</p>
+      <br><p id="p1"><span style="color: var(--accent);">PORTFOLIO</span><br><span class="highlight">Featured Projects</span><br>A selection of projects showcasing my skills in data analysis, visualization, and software development.</p>
       <div class="container">
       <div class="grid">
         <div class="col-6 card fade">
@@ -1060,25 +1137,33 @@
       </ul>
     </div>
   </section>
-  <!-- Contact -->
+
+
   <section id="contact">
-    <div class="card1">
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" rows="5" placeholder="Message" required></textarea>
-        <button class="btn primary" type="submit">Send message</button>
-      </form>
-      <p id="formStatus" class="muted" role="status" style="margin-top:8px;"></p>
-    </div>  
-    <div class="condetail">
-      <div class="col-8 card fade">
-        <h3>Contact</h3>
-        <p class="btn"><i class="fab fa-github" aria-hidden="true"></i> GitHub <a href="https://github.com/Asura-824" target="_blank">Asura-824</a></p>
-        <p class="btn"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn <a href="https://www.linkedin.com/in/shubham-kadam-b8856031a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDrYMSIRFQeuRzoobVQ4G0g%3D%3D" target="_blank">Shubham Kadam</a></p>
-      </div>
-      <div class="col-8 card fade">
-        <p class="muted">// Current status <br><span style="color:var(--accent)">boolean</span> isAvailable =<span style="color: rgb(14, 216, 14);"> true</span>;<br><span style="color:var(--accent);">String </span>preferredWork =<span style="color: rgb(14, 216, 14);"> "Remote / Hybrid"</span>;</p>
+    <br><p id="p2"><span style="color: var(--accent);">GET IN TOUCH</span><br><span class="highlight">Let's work together</span><br>Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+    <div>
+      <div class="muted2">
+        <div class="card1">
+          <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Your name" autocomplete="name"  required />
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" autocomplete="email"  required />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Message" autocomplete="off"  required></textarea>
+            <button class="btn primary" type="submit">Send message</button>
+          </form>
+          <p id="formStatus" class="muted" role="status" style="margin-top:8px;"></p>
+        </div>  
+        <div class="condetail">
+          <div class="col-8 card fade">
+            <p class="btn" style="border-radius: 10px;"><i class="fab fa-github" aria-hidden="true"></i> GitHub <a href="https://github.com/Asura-824" target="_blank">Asura-824</a></p>
+            <p class="btn" style="border-radius: 10px;"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn <a href="https://www.linkedin.com/in/shubham-kadam-b8856031a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDrYMSIRFQeuRzoobVQ4G0g%3D%3D" target="_blank">Shubham Kadam</a></p>
+          </div>
+          <div class="col-8 card fade">
+            <p class="muted">// Current status <br><span style="color:var(--accent)">boolean</span> isAvailable =<span style="color: rgb(14, 216, 14);"> true</span>;<br><span style="color:var(--accent);">String </span>preferredWork =<span style="color: rgb(14, 216, 14);"> "Remote / Hybrid"</span>;</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

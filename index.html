@@ -7,10 +7,7 @@
   <link rel="icon" style="border-radius:50%;" href="shubhamimage.png" type="image/jpg">
   <meta name="description" content="Data Analyst portfolio showcasing dashboards, analytics projects, and interactive visualizations."/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Include Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- Dashboard icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root{
@@ -19,9 +16,9 @@
         --text:#e8edf5; 
         --header-text:white;
         --muted:#a9b4c7; 
-        --accent:#5cc8ff; 
-        --accent-2:#d67cf2;
-        --accent-light:rgba(29, 153, 255, 0.366);
+        --accent: #0f1ae7; 
+        --accent-2:#5cc8ff;
+        --accent-light:rgba(29, 153, 255, 0.24);
         --border:#1f2630; 
         --header-bg:linear-gradient(180deg, rgba(15,18,23,.85), rgba(15,18,23,.65));
         --shadow:0 10px 30px rgba(0, 0, 0, 0.642);
@@ -30,12 +27,11 @@
         box-sizing:border-box;
         font-family:Arial, Helvetica, sans-serif;
     }
-    .btn i{
-      font-size: 1.3rem;
+    .btn i ,.btn.primary{
+      font-size: 1rem;
     }
     section{
       width: 95%;
-      /* background-color: pink; */
       display: block;
       margin: auto;
       align-items: center;
@@ -49,7 +45,7 @@
     #skills p, #projects #p1, #about #p1, #contact #p2 {
       text-align: center;
       padding: 2rem;
-      font-size: auto;
+      font-size: 1rem;
     }
     .col-4 .fas,.col-6 .fas{
       background-color: var(--card);
@@ -161,7 +157,7 @@
       padding: 10px;               
       border-radius: 10px;         
       display: inline-flex;
-      width: 50px;                            /* fixed width */
+      width: 50px;                    
       height: 50px;
       justify-content: center;
       align-items: center;
@@ -177,7 +173,7 @@
       margin: 0%;
     }
     .hero img:hover{
-      transform:scale(1.18);
+      transform:scale(1.10);
       transition: ease-in 1s;
     }
     .hero h2{
@@ -228,6 +224,11 @@
     .btn{
       padding:10px 14px; 
       border-radius:10px; 
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
       font-size: 0.9rem;
       font-weight: 500;
       border-radius: 50px;
@@ -293,17 +294,8 @@
         max-width: 400px;
         max-height: 400px;
       }
-      #skills ul{
-        width: 100%;
-        list-style: circle;
-      }
       #skills h3{
         text-align: left;
-        padding: 1rem;
-      }
-      #skills ul li{
-        margin: 0 1rem;
-        padding: 3rem 0;
       }
       .avatar{
         width:28px; 
@@ -377,28 +369,25 @@
       gap:14px; 
       align-items:flex-start;
     }
-    .project .thumb{
-      width:120px; 
-      height:80px; 
-      border-radius:10px; 
-      border:1px solid var(--border);
-      background-image:linear-gradient(135deg, var(--accent), var(--accent-2));
-    }
     .project h4{
       margin:0 0 6px;
+      font-size: 1.1rem;
     }
-    .project .meta{
+    .meta{
       font-size:13px; 
       color:var(--muted);
+    }
+    .project p{
+      font-size: 1rem;
     }
     .chips{
       display:flex; 
       gap:8px; 
       flex-wrap:wrap; 
-      margin-top:8px;
+      margin-top:auto;
     }
     .chip{
-      font-size:13px; 
+      font-size:10.6px; 
       background-color: var(--accent-2);
       padding:4px 8px; 
       border-radius:999px; 
@@ -504,6 +493,9 @@
         width: 100%;
         margin: auto;
       }
+      .hero h1{
+        margin: 3%;
+      }
       #contact .card1{
         width: 95%;
         height: 90%;
@@ -514,6 +506,7 @@
       .condetail>div{
         width: 100%;
       }
+      
       .muted2{
         display: flex;
         flex-direction: column;
@@ -605,7 +598,7 @@
     #send-btn {
       width: 25%;
       padding: 5px;
-      background: var(--accent);
+      background: var(--accent-2);
       color: black;
       border: none;
       font-weight: 500;
@@ -628,7 +621,7 @@
     }
 
     .chatbot-logo{
-      background-color: var(--accent-2);
+      background-color: var(--accent);
       width: 45px;
       height: 45px;
       border-radius: 50%;
@@ -672,7 +665,7 @@
       <strong>Data Analyst</strong> — Skilled in Python, PySpark, Java, R, SQL, PostgreSQL, Oracle, Power BI, and Tableau
     </p>
     <h2>Turning raw data into <span id="rotating"></span></h2>
-    <p>Blending analytics rigor with developer versatility—interactive dashboards, clean pipelines, Java‑powered applications, and expressive visual narratives that move stakeholders to action.</p>
+    <p>Fusing analytical rigor with developer versatility—building interactive dashboards, seamless data pipelines, Java‑powered solutions, and vivid visual narratives that drive stakeholders to decisive action.</p>
 
     <div class="tags">
       <span class="tag1">Predictive modeling</span>
@@ -683,15 +676,15 @@
       <span class="tag1">Web design</span>
     </div>
     <div class="cta">
-      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn primary" href="#projects">View projects <i class="fa-solid fa-arrow-down"></i></a>
       <a class="btn" href="#contact">Contact me</a>
-      <a class="btn primary" href="https://github.com/Asura-824">View GitHub</a>
-      <a class="btn" href="RESUME.pdf" download>Download Resume</a>
+      <a class="btn primary" href="https://github.com/Asura-824"><i class="fa-brands fa-github" style="font-size: 20px;"></i> GitHub</a>
+      <a class="btn" href="RESUME.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
     </div>
   </section>
 
   <section id="about">
-    <p id="p1"><span style="color: var(--accent);">ABOUT ME</span><br><span class="highlight">Data Analyst & Developer</span></p>
+    <br><p id="p1"><span style="color: var(--accent);">ABOUT ME</span><br><span class="highlight">Data Analyst & Developer</span></p>
     <div>
       <div class="container grid">
 
@@ -715,7 +708,7 @@
                 <i class="fa-solid fa-chart-line"></i>
               </div>
               <div>
-                <p><span style="color: var(--accent);">Dashboards</span><br>Designed KPI dashboards that cut reporting cycles by 40%</p>
+                <p><span style="color: var(--header-text); font-weight: 600;">Dashboards</span><br>Designed KPI dashboards that cut reporting cycles by 40%</p>
               </div>
             </div>
             <div class="muted1">
@@ -723,7 +716,7 @@
                 <i class="fa-solid fa-database"></i>
               </div>
               <div>
-                <p><span style="color: var(--accent);">Pipelines</span><br>Streamlined ETL workflows with PySpark to handle 10M+ rows efficiently</p>
+                <p><span style="color: var(--header-text); font-weight: 600;">Pipelines</span><br>Streamlined ETL workflows with PySpark to handle 10M+ rows efficiently</p>
               </div>
             </div>
             <div class="muted1">
@@ -731,7 +724,7 @@
                 <i class="fa-solid fa-microchip"></i>
               </div>
               <div>
-                <p><span style="color: var(--accent);">Visualization</span><br>Created intuitive visualizations that made complex datasets easy to understand.</p>
+                <p><span style="color: var(--header-text); font-weight: 600;">Visualization</span><br>Created intuitive visualizations that made complex datasets easy to understand.</p>
               </div>
             </div>
             <div class="muted1">
@@ -739,7 +732,7 @@
                 <i class="fa-solid fa-trophy"></i>
               </div>
               <div>
-                <p><span style="color: var(--accent);">Java Apps</span><br>Built secure, user-friendly desktop tools with Swing/JDBC integrated with PostgreSQL</p>
+                <p><span style="color: var(--header-text); font-weight: 600;">Java Apps</span><br>Built secure, user-friendly desktop tools with Swing/JDBC integrated with PostgreSQL</p>
               </div>
             </div>
           </div>
@@ -899,221 +892,167 @@
       <br><p id="p1"><span style="color: var(--accent);">PORTFOLIO</span><br><span class="highlight">Featured Projects</span><br>A selection of projects showcasing my skills in data analysis, visualization, and software development.</p>
       <div class="container">
       <div class="grid">
-        <div class="col-6 card fade">
+        <div class="col-4 card fade">
             <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
                 <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">EV Population(Washington) Analysis<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • Pyspark • Pandas • Matplotlib • Seaborn </p>
+                    <h4 style="display: flex;align-items: center;justify-content: space-between;">EV Population(WA) Analysis<i class="fa-regular fa-folder"></i></h4>
                     <p>Analysis of electric vehicle adoption in Washington state using PySpark and Pandas. Visualized using Matplot and Seaborn</p>
                     <div class="chips">
-                        <span class="chip">Data Cleaning</span>
-                        <span class="chip">Visualization</span>
-                        <span class="chip">Pyspark</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">PySpark</span>
+                        <span class="chip">Pandas</span>
+                        <span class="chip">Matplotlib</span>
+                        <span class="chip">+1</span>
                     </div>
-                    <p><a href="https://github.com/Asura-824/Electric-Vehicle-WA" target="_blank">Live demo</a></p>
+                    <p><a href="https://github.com/Asura-824/Electric-Vehicle-WA" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
                 </div>
             </div>
         </div>
-        <div class="col-6 card fade">
+        <div class="col-4 card fade">
             <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
                 <div>
                     <h4 style="display: flex;align-items: center;justify-content: space-between;">India Census Analysis<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • Pandas • Numpy • Matplot • Seaborn • Power BI</p>
-                    <p>Analysis of India Census data using Python libraries, used some Python libraries for visualization and also with the beautiful Power Bi dashboard.</p>
-                    <div class="chips">
-                        <span class="chip">Data Cleaning</span>
-                        <span class="chip">Visualization</span>
-                        <span class="chip">Power BI</span>
-                    </div>
-                    <p><a href="https://github.com/Asura-824/IND-Census-2011--analysis" target="_blank">Live demo</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 card fade">
-            <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
-                <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">Netflix Data Analysis<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • Pandas • Numpy • Matplot • Seaborn • Power Bi</p>
-                    <p>Analysis of Netflix data using Python libraries, used some Python libraries for visualization and also with the beautiful Power Bi dashboard.</p>
-                    <div class="chips">
-                        <span class="chip">Data Cleaning</span>
-                        <span class="chip">Visualization</span>
-                        <span class="chip">Power Bi</span>
-                    </div>
-                    <p><a href="https://github.com/Asura-824/Netflix-analysis" target="_blank">Live demo</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 card fade">
-            <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
-                <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">Covid 19 Analysis<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • Pandas • Numpy • Matplot • Seaborn</p>
-                    <p>Analysis of Netflix data using Python libraries, used some Python libraries for visualization and also with the beautiful Power Bi dashboard.</p>
-                    <div class="chips">
-                        <span class="chip">Data Cleaning</span>
-                        <span class="chip">Visualization</span>
-                        <span class="chip">Power Bi</span>
-                    </div>
-                    <p><a href="https://github.com/Asura-824/Covid-19-analysis" target="_blank">Live demo</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 card fade">
-            <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
-                <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">Spotify users Analysis<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • Pandas • Numpy • Matplot • Seaborn</p>
-                    <p>Analysis of Spotify users data using Python libraries, used some Python libraries for visualization.</p>
-                    <div class="chips">
-                        <span class="chip">Data Cleaning</span>
-                        <span class="chip">Visualization</span>
-                    </div>
-                    <p><a href="https://github.com/Asura-824/Spotify-analysis" target="_blank">Live demo</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 card fade">
-            <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
-                <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">Rock Paper Scissor game<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • Tkinter • PIL</p>
-                    <p>Rock Paper Scissor game using Python Tkinter for GUI and PIL for image handling.</p>
+                    <p>Analysis of India Census data using Python libraries, used some Python libraries for visualization and created beautiful dashboard.</p>
                     <div class="chips">
                         <span class="chip">Python</span>
-                        <span class="chip">Tkinter</span>
-                        <span class="chip">PIL</span>
+                        <span class="chip">Pandas</span>
+                        <span class="chip">NumPy</span>
+                        <span class="chip">Matplotlib</span>
+                        <span class="chip">+2</span>
                     </div>
-                    <p><a href="https://github.com/Asura-824/Rock-Paper-Scissor" target="_blank">Live demo</a></p>
+                    <p><a href="https://github.com/Asura-824/IND-Census-2011--analysis" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
                 </div>
             </div>
         </div>
-        <div class="col-6 card fade">
+        <div class="col-4 card fade">
             <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
-                <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">Number Gussing Game<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python</p>
-                    <p>Number guessing game using Python.Where user can guess number between 1 to 100 in given chances.</p>
-                    <div class="chips">
-                        <span class="chip">Python</span>
-                    </div>
-                    <p><a href="https://github.com/Asura-824/Number-Guessing-Game" target="_blank">Live demo</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 card fade">
-            <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
-                <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">Face Detection GUI<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • OpenCV</p>
-                    <p>Face detection GUI using Python and OpenCV for real-time face detection.</p>
-                    <div class="chips">
-                        <span class="chip">Python</span>
-                        <span class="chip">OpenCV</span>
-                    </div>
-                    <p><a href="https://github.com/Asura-824/Face-detection" target="_blank">Live demo</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 card fade">
-            <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
-                <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">Stop Watch & Timer<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • Tkinter</p>
-                    <p>Stopwatch and timer application using Python Tkinter for GUI.</p>
-                    <div class="chips">
-                        <span class="chip">Python</span>
-                        <span class="chip">Tkinter</span>
-                    </div>
-                    <p><a href="https://github.com/Asura-824/Stop-timer" target="_blank">Live demo</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 card fade">
-            <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
-                <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">QR code Generator<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • Qrcode</p>
-                    <p>QR code generator using Python and Qrcode library that can user save on their device.</p>
-                    <div class="chips">
-                        <span class="chip">Python</span>
-                        <span class="chip">Qrcode</span>
-                    </div>
-                    <p><a href="https://github.com/Asura-824/QR-Generator" target="_blank">Live demo</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 card fade">
-            <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
-                <div>
-                    <h4 style="display: flex;align-items: center;justify-content: space-between;">Phone Data Masking<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Python • Phonenumbers</p>
-                    <p>Phone data masking using Python and Phonenumbers library to mask phone numbers.</p>
-                    <div class="chips">
-                        <span class="chip">Python</span>
-                        <span class="chip">Phonenumbers</span>
-                    </div>
-                    <p><a href="https://github.com/Asura-824/Phno_Detailtracker" target="_blank">Live demo</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 card fade">
-            <div class="project">
-                <div class="thumb" aria-hidden="true"></div>
                 <div>
                     <h4 style="display: flex;align-items: center;justify-content: space-between;">Attendance Tracker<i class="fa-regular fa-folder"></i></h4>
-                    <p class="meta">Java • Swing • JDBC</p>
-                    <p>Attendance tracker application using Java Swing and JDBC for database connectivity.</p>
+                    <p>An attendance tracking application built with Java Swing for the user interface and JDBC for seamless database connectivity.</p>
                     <div class="chips">
                         <span class="chip">Java</span>
                         <span class="chip">Swing</span>
                         <span class="chip">JDBC</span>
                     </div>
-                    <p><a href="https://github.com/Asura-824/RJAttendPortal" target="_blank">Live demo</a></p>
+                    <p><a href="https://github.com/Asura-824/RJAttendPortal" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
                 </div>
             </div>
         </div>
-        <div class="col-6 card fade">
+        <div class="col-4 card fade">
           <div class="project">
-            <div class="thumb" aria-hidden="true"></div>
             <div>
               <h4 style="display: flex;align-items: center;justify-content: space-between;">Shubham's CodeQuotient<i class="fa-regular fa-folder"></i></h4>
-              <p class="meta">HTML • CSS • JS</p>
               <p>Designed and deployed a portfolio site with integrated Python, SQL, and PostgreSQL compilers, attracting 200+ monthly visitors and hosting datasets for interview prep.</p>
               <div class="chips">
-                <span class="chip">Web Design</span>
-                <span class="chip">HTML/CSS/JS</span>
-                <span class="chip">Portfolio</span>
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
               </div>
-              <p><a href="https://codequot.netlify.app/" target="_blank">Live demo</a></p>
+              <p><a href="https://codequot.netlify.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
             </div>
           </div>
         </div>
-        <div class="col-6 card fade">
+        <div class="col-4 card fade">
           <div class="project">
-            <div class="thumb" aria-hidden="true"></div>
             <div>
               <h4 style="display: flex;align-items: center;justify-content: space-between;">SWIS Foundation<i class="fa-regular fa-folder"></i></h4>
-              <p class="meta">React • JavaScript • TypeScript</p>
               <p>Modified and enhanced the SWIS Foundation website using React, JavaScript, and TypeScript to improve user engagement and information accessibility.</p>
               <div class="chips">
-                <span class="chip">Web Development</span>
                 <span class="chip">React</span>
+                <span class="chip">JavaScript</span>
                 <span class="chip">TypeScript</span>
+              </div>
+              <p><a href="https://www.theswis.org/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
             </div>
-            <p><a href="https://www.theswis.org/" target="_blank">Live demo</a></p>
           </div>
+        </div>
+      </div>
+      <h2 style="text-align: center; margin-top: 4rem;">Other Projects</h2>
+      <p style="font-size: 1.1rem; text-align: center; margin: 0.5rem 0;">A collection of creative projects highlighting problem‑solving, design, and engaging experiences.</p>
+      <p style="text-align: center; margin-top: 0.5rem; font-size: 1rem;">Click below to explore their purpose and process.</p>
+      <div class="container">
+        <div class="grid">
+          <button class="col-4 card fade" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; cursor:pointer; color: var(--header-text);" onclick="window.location.href='https://github.com/Asura-824/Netflix-analysis'">
+            <div style="text-align: start;">
+                <h4 style="font-size: 1.2rem;">Netflix Data Analysis</h4>
+                <p class="meta">Python • Pandas • Matplot • Seaborn • Power BI </p>
+              </div>
+              <div>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+          </button>
+          <button class="col-4 card fade" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; cursor:pointer; color: var(--header-text);" onclick="window.location.href='https://github.com/Asura-824/Covid-19-analysis'">
+            <div style="text-align: start;">
+                <h4 style="font-size: 1.2rem;">Covid 19 Analysis</h4>
+                <p class="meta">Python • Pandas • Matplot • Seaborn • Power BI</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+          </button>
+          <button class="col-4 card fade" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; cursor:pointer; color: var(--header-text);" onclick="window.location.href='https://github.com/Asura-824/Spotify-analysis'">
+            <div style="text-align: start;">
+                <h4 style="font-size: 1.2rem;">Spotify User Analysis</h4>
+                <p class="meta">Python • Pandas • Matplot • Seaborn • Power BI</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+          </button>
+          <button class="col-4 card fade" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; cursor:pointer; color: var(--header-text);" onclick="window.location.href='https://github.com/Asura-824/Face-detection'">
+            <div style="text-align: start;">
+                <h4 style="font-size: 1.2rem;">Face Detection GUI</h4>
+                <p class="meta">Python • OpenCV</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+          </button>
+          <button class="col-4 card fade" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; cursor:pointer; color: var(--header-text);" onclick="window.location.href='https://github.com/Asura-824/Rock-Paper-Scissor'">
+            <div style="text-align: start;">
+                <h4 style="font-size: 1.2rem;">Rock Paper Scissor Game</h4>
+                <p class="meta">Python • Tkinter • PIL</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+          </button>
+          <button class="col-4 card fade" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; cursor:pointer; color: var(--header-text);" onclick="window.location.href='https://github.com/Asura-824/QR-Generator'">
+            <div style="text-align: start;">
+                <h4 style="font-size: 1.2rem;">QR Code Generator</h4>
+                <p class="meta">Python • Qrcode</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+          </button>
+          <button class="col-4 card fade" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; cursor:pointer; color: var(--header-text);" onclick="window.location.href='https://github.com/Asura-824/Phno_Detailtracker'">
+            <div style="text-align: start;">
+                <h4 style="font-size: 1.2rem;">Phone Data Masking</h4>
+                <p class="meta">Python • Phonenumbers</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+          </button>
+          <button class="col-4 card fade" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; cursor:pointer; color: var(--header-text);" onclick="window.location.href='https://github.com/Asura-824/Number-Guessing-Game'">
+            <div style="text-align: start;">
+                <h4 style="font-size: 1.2rem;">Number Guessing Game</h4>
+                <p class="meta">Python • Random</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+          </button>
+          <button class="col-4 card fade" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; cursor:pointer; color: var(--header-text);" onclick="window.location.href='https://github.com/Asura-824/Stop-timer'">
+            <div style="text-align: start;">
+                <h4 style="font-size: 1.2rem;">Stop Watch & Timer</h4>
+                <p class="meta">Python • Tkinter</p>
+              </div>
+              <div>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+          </button>
         </div>
       </div>
     </div>
@@ -1157,8 +1096,8 @@
         </div>  
         <div class="condetail">
           <div class="col-8 card fade">
-            <p class="btn" style="border-radius: 10px;"><i class="fab fa-github" aria-hidden="true"></i> GitHub <a href="https://github.com/Asura-824" target="_blank">Asura-824</a></p>
-            <p class="btn" style="border-radius: 10px;"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn <a href="https://www.linkedin.com/in/shubham-kadam-b8856031a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDrYMSIRFQeuRzoobVQ4G0g%3D%3D" target="_blank">Shubham Kadam</a></p>
+            <p class="btn" style="border-radius: 10px;"><i class="fab fa-github" style="font-size: 20px;" aria-hidden="true"></i> GitHub <a href="https://github.com/Asura-824" target="_blank">Asura-824</a></p>
+            <p class="btn" style="border-radius: 10px;"><i class="fab fa-linkedin" style="font-size: 20px;" aria-hidden="true"></i> LinkedIn <a href="https://www.linkedin.com/in/shubham-kadam-b8856031a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDrYMSIRFQeuRzoobVQ4G0g%3D%3D" target="_blank">Shubham Kadam</a></p>
           </div>
           <div class="col-8 card fade">
             <p class="muted">// Current status <br><span style="color:var(--accent)">boolean</span> isAvailable =<span style="color: rgb(14, 216, 14);"> true</span>;<br><span style="color:var(--accent);">String </span>preferredWork =<span style="color: rgb(14, 216, 14);"> "Remote / Hybrid"</span>;</p>

@@ -18,7 +18,8 @@
       --muted: #9aa5b8; 
       --accent: #3b82f6; 
       --accent-2: #5cc8ff; 
-      --accent-light: rgba(59, 130, 246, 0.25); 
+      --accent-light: rgba(59, 130, 246, 0.25);
+      --accent-light2:#5cc9ff69; 
       --border: #2d333b; 
       --header-bg: linear-gradient(180deg, rgba(13,17,23,.9), rgba(13,17,23,.7));
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.7); 
@@ -324,7 +325,7 @@
       padding: 0%;
     }
     .circle::marker {
-      color: var(--accent);       /* marker only */
+      color: var(--accent); 
       list-style-type: circle;
     }
     .muted li::marker{
@@ -406,7 +407,7 @@
       margin-top:auto;
     }
     .chip{
-      font-size:10.6px; 
+      font-size:12px; 
       background-color: var(--accent-2);
       padding:4px 8px; 
       border-radius:999px; 
@@ -416,7 +417,7 @@
     form{
       display:flex;
       flex-direction: column; 
-      gap:12px;
+      gap:15px;
       width: 100%;
       padding: 2rem;
       height: max-content;
@@ -497,6 +498,7 @@
   --accent: #ff0088; 
   --accent-2: #f4a6a6; 
   --accent-light: rgba(255, 20, 145, 0.18); 
+  --accent-light2:#f4a6a683;
   --header-bg: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.7));
   --border: #dce2eb; 
   --shadow: 0 6px 20px rgba(0,0,0,.08);
@@ -974,7 +976,7 @@
                           <span class="chip">PySpark</span>
                           <span class="chip">Pandas</span>
                           <span class="chip">Matplotlib</span>
-                          <span class="chip">+1</span>
+                          <span class="chip" style="background-color: var(--accent-light2);">+1</span>
                       </div>
                       <p><a style="background: var(--accent); color: black; border-radius: 10px;" class="btn" href="https://github.com/Asura-824/Electric-Vehicle-WA" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
                   </div>
@@ -993,7 +995,7 @@
                           <span class="chip">Pandas</span>
                           <span class="chip">NumPy</span>
                           <span class="chip">Matplotlib</span>
-                          <span class="chip">+2</span>
+                          <span class="chip" style="background-color: var(--accent-light2);">+2</span>
                       </div>
                       <p><a style="background: var(--accent); color: black; border-radius: 10px;" class="btn" href="https://github.com/Asura-824/IND-Census-2011--analysis" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
                   </div>
@@ -1164,18 +1166,6 @@
     <br><p id="p2"><span style="color: var(--accent);">GET IN TOUCH</span><br><span class="highlight">Let's work together</span><br>Have a project in mind or want to collaborate? I'd love to hear from you.</p>
     <div>
       <div class="muted2">
-        <div class="card1">
-          <form id="contactForm">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Your name" autocomplete="name"  required />
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Email" autocomplete="email"  required />
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Message" autocomplete="off"  required></textarea>
-            <button class="btn primary" type="submit">Send message</button>
-          </form>
-          <p id="formStatus" class="muted" role="status" style="margin-top:8px;"></p>
-        </div>  
         <div class="condetail">
           <div class="col-8 card fade" style="display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;">
             <h3>Connect with me</h3>
@@ -1197,9 +1187,21 @@
             </a>
           </div>  
           <div class="col-8 card fade">
-            <p class="muted">// Current status <br><span style="color:var(--accent)">boolean</span> isAvailable =<span style="color: rgb(14, 216, 14);"> true</span>;<br><span style="color:var(--accent);">String </span>preferredWork =<span style="color: rgb(14, 216, 14);"> "Remote / Hybrid"</span>;</p>
+            <p class="muted"><span style="color: var(--accent);">// Current status</span><br>boolean <span style="color:var(--header-text)">isAvailable </span> =<span style="color: var(--accent);"> true</span> ;<br>String <span style="color: var(--header-text);">preferredWork</span> =<span style="color: var(--accent);"> "Remote / Hybrid"</span> ;</p>
           </div>
         </div>
+        <div class="card1">
+          <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Your name" autocomplete="name"  required />
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" autocomplete="email"  required />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Message" autocomplete="off"  required></textarea>
+            <button class="btn primary" type="submit" style="border-radius: 10px;">Send message</button>
+          </form>
+          <p id="formStatus" class="muted" role="status" style="margin-top:8px;"></p>
+        </div>  
       </div>
     </div>
   </section>

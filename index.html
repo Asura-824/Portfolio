@@ -31,6 +31,18 @@
     .btn i ,.btn.primary{
       font-size: 1rem;
     }
+    .responsediv{
+      color: var(--header-text);
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 0.8rem;
+      margin: auto;
+      font-size: 0.9rem;
+      overflow-x: scroll;
+      scrollbar-width: none;
+      width: 100%;
+    }
     section{
       width: 95%;
       display: block;
@@ -49,12 +61,7 @@
       font-size: 1rem;
     }
     .col-4 .fas,.col-6 .fas{
-      background-color: var(--card);
-      width: 40px;
-      height: 40px;
-      color: var(--accent);  
-      margin: auto;
-      border-radius: 50%;       
+      color: var(--accent);        
     }
     html{
         scroll-behavior:smooth;
@@ -155,7 +162,7 @@
     .icon {
       background-color: var(--accent-light);   
       color: var(--accent);              
-      font-size: 1rem;             
+      font-size: 1.2rem;             
       padding: 10px;               
       border-radius: 10px;         
       display: inline-flex;
@@ -374,6 +381,13 @@
       box-shadow:var(--shadow);
       overflow: hidden;
     }
+    #projects .col-4:hover{
+      border-color: var(--accent);
+    }
+    a:hover h4, .grid a:hover #icon{
+      border-color: var(--accent);
+      color: var(--accent);
+    }
    .image{
       background-size: cover;
       background-position: center; 
@@ -514,15 +528,16 @@
     .condetail{
       display: flex;
       width: 500px;
+      height: 550px;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.2rem;
     }
     .condetail > div{
       width: 500px;
     }
     #contact .card1{
       width: 600px;
-      height: 500px;
+      height: 550px;
       display: flex;
       flex-direction: column;
       margin: auto;
@@ -646,6 +661,7 @@
       background: var(--accent);
       color: rgb(0, 0, 0);
       padding: 5px 10px;
+      width: 50%;
       border-radius: 5px;
       display: inline-block;
     }
@@ -653,6 +669,7 @@
     #messages .bot .text {
       background: var(--accent-2);
       padding: 5px 10px;
+      width: 100%;
       color: black;
       border-radius: 5px;
       display: inline-block;
@@ -763,12 +780,12 @@
         <!-- About Me -->
         <div class="col-6 card fade">
           <h2 style="color: var(--accent);">Who I Am</h2>
-          <p class="muted" style="padding: 0.5rem;">
-            I am a Data Analyst and Developer with a passion for transforming complex datasets into clear, actionable insights that empower smarter decision-making. <br><br>
-            My expertise spans the entire analytics lifecycle—from data acquisition and cleaning, through statistical modeling and predictive analysis, to visualization and reporting—ensuring that every stage delivers measurable value. <br><br>
-            Beyond analytics, I bring a developer’s mindset, designing interactive dashboards, optimizing production-ready pipelines, and building secure Java applications that integrate seamlessly with modern web and desktop platforms. <br><br>
-            By combining analytical rigor with technical versatility, I create solutions that are not only data-driven but also dynamic, scalable, and user-friendly.
-          </p>
+            <p class="muted" style="padding: 0.5rem; font-size: 1rem; line-height: 1.8;">
+              I'm a <span style="color: var(--accent); font-weight: 600;">Data Analyst and Developer</span> dedicated to turning raw data into insights that drive real decisions. <br><br>
+              I work across the full analytics spectrum—sourcing and cleaning data, building statistical and predictive models, crafting compelling visualizations, and delivering insights that matter. <br><br>
+              I also code. I design <span style="color: var(--accent); font-weight: 600;">interactive dashboards</span>, architect <span style="color: var(--accent); font-weight: 600;">efficient data pipelines</span>, and develop robust <span style="color: var(--accent); font-weight: 600;">Java applications</span> that connect seamlessly to databases and web platforms. <br><br>
+              What sets me apart is the blend: <span style="color: var(--accent); font-weight: 600;">analytical precision</span> paired with <span style="color: var(--accent); font-weight: 600;">engineering discipline</span>, creating solutions that are intelligent, scalable, and built to last.
+            </p>
         </div>
 
         <!-- Professional Highlights -->
@@ -811,7 +828,7 @@
         </div>
 
         <div class="col-6 card fade">
-          <h2 style="color: var(--accent); display: flex; flex-direction: row; gap: 10px;">
+          <h2 style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
             <div class="icon">
               <i class="fa-solid fa-graduation-cap"></i>
             </div>
@@ -825,12 +842,12 @@
         </div>
 
         <div class="col-6 card fade">
-          <h2 style="color: var(--accent); display: flex; flex-direction: row; gap: 10px;">
+          <h2 style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
             <div class="icon">
               <i class="fa-solid fa-book-open"></i>
             </div>
             Current Learnings</h2>
-          <ul class="muted" style="padding: 0.5rem; list-style: disc;">
+          <ul class="muted" style="padding: 1rem; list-style: disc;">
             <li class="circle">Advanced data modeling & optimization</li>
             <li class="circle">Java-powered backend architecture and services</li>
             <li class="circle">Modern web development with React & TypeScript</li>
@@ -838,8 +855,8 @@
         </div>
 
         <div class="col-6 card fade">
-          <h2 style="color: var(--accent);">Technical Proficiency</h2>
-          <ul class="muted" style="padding: 0.5rem;">
+          <h2>Technical Proficiency</h2>
+          <ul class="muted" style="padding: 1rem;">
             <li class="circle"><span>Programming Languages:</span> Python, Java, C++, R</li>
             <li class="circle"><span>Big Data & Processing:</span> PySpark, SQL</li>
             <li class="circle"><span>Databases:</span> PostgreSQL, Oracle</li>
@@ -851,8 +868,8 @@
         </div>
 
         <div class="col-6 card fade">
-          <h2 style="color: var(--accent);">Real World Projects</h2>
-          <ul class="muted" style="padding: 0.5rem;">
+          <h2>Real World Projects</h2>
+          <ul class="muted" style="padding: 1rem;">
             <li class="circle">EV adoption analysis in Washington using PySpark & Pandas</li>
             <li class="circle">India Census insights with Python & Power BI</li>
             <li class="circle">Netflix user behavior study with Python libraries</li>
@@ -860,7 +877,6 @@
             <li class="circle">Interactive portfolio platforms with dynamic features</li>
             <li class="circle">Interview prep resources & practice modules</li>
             <li class="circle">Data analysis & ML predictor web app</li>
-            <li class="circle">Hub of 100+ innovative project ideas</li>
           </ul>
         </div>
       </div>
@@ -969,7 +985,7 @@
               </div>
               <div class="project">
                   <div>
-                      <h4 style="display: flex;align-items: center;justify-content: space-between;">EV Population(WA) Analysis</h4>
+                      <h4>EV Population(WA) Analysis</h4>
                       <p class="muted">Electric vehicle adoption trends in Washington State analyzed with PySpark and Pandas, and visualized through Matplotlib and Seaborn</p>
                       <div class="chips">
                           <span class="chip">Python</span>
@@ -988,7 +1004,7 @@
               </div>
               <div class="project">
                   <div>
-                      <h4 style="display: flex;align-items: center;justify-content: space-between;">India Census Analysis</h4>
+                      <h4>India Census Analysis</h4>
                       <p class="muted">Analysis of India Census data using Python libraries, used some Python libraries for visualization and created beautiful dashboard.</p>
                       <div class="chips">
                           <span class="chip">Python</span>
@@ -1007,7 +1023,7 @@
               </div>
             <div class="project">
               <div>
-                <h4 style="display: flex;align-items: center;justify-content: space-between;">NeuraSG Chatbot</h4>
+                <h4>NeuraSG Chatbot</h4>
                 <p class="muted">Built and refined NeuraSG, a fully offline chatbot using HTML, CSS, and JavaScript, delivering responsive, accessible, and engaging interactions without API dependencies.</p>
                 <div class="chips">
                   <span class="chip">HTML</span>
@@ -1024,7 +1040,7 @@
               </div>
               <div class="project">
                   <div>
-                      <h4 style="display: flex;align-items: center;justify-content: space-between;">Attendance Tracker</h4>
+                      <h4>Attendance Tracker</h4>
                       <p class="muted">An attendance tracking application built with Java Swing for the user interface and JDBC for seamless database connectivity.</p>
                       <div class="chips">
                           <span class="chip">Java</span>
@@ -1041,7 +1057,7 @@
               </div>
             <div class="project">
               <div>
-                <h4 style="display: flex;align-items: center;justify-content: space-between;">Shubham's CodeQuotient</h4>
+                <h4>Shubham's CodeQuotient</h4>
                 <p class="muted">Designed and deployed a portfolio site with integrated Python, SQL, and PostgreSQL compilers, attracting 200+ monthly visitors and hosting datasets for interview prep.</p>
                 <div class="chips">
                   <span class="chip">HTML</span>
@@ -1058,7 +1074,7 @@
               </div>
             <div class="project">
               <div>
-                <h4 style="display: flex;align-items: center;justify-content: space-between;">SWIS Foundation</h4>
+                <h4>SWIS Foundation</h4>
                 <p class="muted">Modified and enhanced the SWIS Foundation website using React, JavaScript, and TypeScript to improve user engagement and information accessibility.</p>
                 <div class="chips">
                   <span class="chip">React</span>
@@ -1079,7 +1095,7 @@
               <h4 style="font-size: 1.2rem;">Netflix Data Analysis</h4>
               <p class="meta">Python • Pandas • Matplot • Seaborn • Power BI </p>
             </div>
-            <div>
+            <div id="icon">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
           </a>
@@ -1088,7 +1104,7 @@
               <h4 style="font-size: 1.2rem;">Covid 19 Analysis</h4>
               <p class="meta">Python • Pandas • Matplot • Seaborn • Power BI</p>
             </div>
-            <div>
+            <div id="icon">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
           </a>
@@ -1097,7 +1113,7 @@
               <h4 style="font-size: 1.2rem;">Spotify User Analysis</h4>
               <p class="meta">Python • Pandas • Matplot • Seaborn • Power BI</p>
             </div>
-            <div>
+            <div id="icon">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
           </a>
@@ -1106,7 +1122,7 @@
               <h4 style="font-size: 1.2rem;">Face Detection GUI</h4>
               <p class="meta">Python • OpenCV</p>
             </div>
-            <div>
+            <div id="icon">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
           </a>
@@ -1115,7 +1131,7 @@
               <h4 style="font-size: 1.2rem;">Rock Paper Scissor Game</h4>
               <p class="meta">Python • Tkinter • PIL</p>
             </div>
-            <div>
+            <div id="icon">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
           </a>
@@ -1124,7 +1140,7 @@
               <h4 style="font-size: 1.2rem;">QR Code Generator</h4>
               <p class="meta">Python • Qrcode</p>
             </div>
-            <div>
+            <div id="icon">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
           </a>
@@ -1133,7 +1149,7 @@
               <h4 style="font-size: 1.2rem;">Phone Data Masking</h4>
               <p class="meta">Python • Phonenumbers</p>
             </div>
-            <div>
+            <div id="icon">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
           </a>
@@ -1142,7 +1158,7 @@
               <h4 style="font-size: 1.2rem;">Number Guessing Game</h4>
               <p class="meta">Python • Random</p>
             </div>
-            <div>
+            <div id="icon">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
           </a>
@@ -1151,7 +1167,7 @@
               <h4 style="font-size: 1.2rem;">Stop Watch & Timer</h4>
               <p class="meta">Python • Tkinter</p>
             </div>
-            <div>
+            <div id="icon">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </div>
           </a>
@@ -1160,24 +1176,34 @@
     </div>
   </section>
   <section id="certifications">
-    <div class="container card fade">
-      <h3>Certifications</h3>
-      <ul class="muted">
-        <li>Data Science with Python - Internshala</li>
-        <li>Software Development BootCamp - Floydee Foundation</li>
-      </ul>
+    <div class="container">
+      <div class="grid">
+        <div class="col-6 card fade">
+          <h2 style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
+            <div class="icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            Certifications
+          </h2>
+          <ul class="muted">
+            <li class="circle">Data Science with Python - Internshala</li>
+            <li class="circle">Software Development BootCamp - Floydee Foundation</li>
+          </ul>
+        </div>
+        <div class="col-6 card fade">
+          <h2 style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
+            <div class="icon">
+              <i class="fas fa-award"></i>
+            </div>
+            Achievements
+          </h2>
+          <ul class="muted">
+            <li class="circle">Cleared the Tata Crucible Quiz Prelim Round-1 (Online Mode)</li>
+          </ul>
+        </div>
+    </div>
     </div>
   </section>
-
-  <section id="achievements">
-    <div class="container card fade">
-      <h3>Achievements</h3>
-      <ul class="muted">
-        <li>Cleared the Tata Crucible Quiz Prelim Round-1 (Online Mode)</li>
-      </ul>
-    </div>
-  </section>
-
 
   <section id="contact">
     <br><p id="p2"><span style="color: var(--accent);">GET IN TOUCH</span><br><span class="highlight">Let's work together</span><br>Have a project in mind or want to collaborate? I'd love to hear from you.</p>
@@ -1186,7 +1212,7 @@
         <div class="condetail">
           <div class="col-8 card fade" style="display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;">
             <h3>Connect with me</h3>
-            <a href="https://github.com/Asura-824" class="btn" style="display: flex; flex-direction: row; border-radius: 10px; justify-content: flex-start; gap: 1rem; cursor:pointer; color: var(--header-text);">
+            <a href="https://github.com/Asura-824/" class="btn" style="display: flex; flex-direction: row; border-radius: 10px; justify-content: flex-start; gap: 1rem; cursor:pointer; color: var(--header-text);">
               <div class="icon" style="text-align: start;">
                 <i class="fab fa-github" style="font-size: 1.5rem;"></i>
               </div>
@@ -1239,6 +1265,8 @@
     </div>
     <p style="font-size: 12px; text-align: center;">Smart insights, seamless conversations.</p>
   </div>
+
+
   <footer>
     <div class="footer1">
       <div>
@@ -1248,7 +1276,7 @@
         </ul>
       </div>
       <div class="social-links">
-        <a href="https://github/Asura-824.com"><i class="fab fa-github icon" style="font-size: 1.5rem;"></i></a>
+        <a href="https://github.com/Asura-824/"><i class="fab fa-github icon" style="font-size: 1.5rem;"></i></a>
         <a href="https://www.linkedin.com/in/shubham-kadam-b8856031a/"><i class="fab fa-linkedin icon" style="font-size: 1.5rem;"></i></a>
         <a href="mailto:shubham85kadam@gmail.com"><i class="fa-solid fa-envelope icon" style="font-size: 1.5rem;"></i></a>
       </div>
@@ -1441,11 +1469,9 @@ const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
 
 bubble.addEventListener("click", () => {
-  if (chatbot.style.display === "none" || chatbot.style.display === "") {
-    chatbot.style.display = "block";  
-  } else {
-    chatbot.style.display = "none";   
-  }
+  chatbot.style.display = (chatbot.style.display === "none" || chatbot.style.display === "") 
+    ? "block" 
+    : "none";
 });
 
 sendBtn.addEventListener("click", () => {
@@ -1459,54 +1485,38 @@ sendBtn.addEventListener("click", () => {
 function addMessage(sender, text) {
   const msg = document.createElement("div");
   msg.classList.add("message", sender);
+
   const bubble = document.createElement("div");
   bubble.classList.add("text");
-  bubble.textContent = text;
+
+  if (sender === "bot") {
+    bubble.innerHTML = text; // render HTML
+  } else {
+    bubble.textContent = text; // safe for user input
+  }
+
   msg.appendChild(bubble);
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function normalize(str) {
-  return str.toLowerCase().replace(/[^\w\s]/gi, '').trim();
-}
-
-function similarity(a, b) {
-  const setA = new Set(a.split(" "));
-  const setB = new Set(b.split(" "));
-  const intersection = [...setA].filter(x => setB.has(x)).length;
-  const union = new Set([...setA, ...setB]).size;
-  return intersection / union;
+  return str.toLowerCase().trim();
 }
 
 function respondToUser(input) {
   input = normalize(input);
-  let bestMatch = null;
-  let bestScore = 0;
 
-  if (input === "yes") {
-    setTimeout(() => addMessage("bot", "Great! Let's start learning"), 600);
-    return;
-  }
-
+  // Loop through categories and check for exact key match
   for (const category in botData) {
-    if (category === "default") continue;
-    for (const key in botData[category]) {
-      const score = similarity(input, normalize(key));
-      if (score > bestScore) {
-        bestScore = score;
-        bestMatch = botData[category][key];
-      }
+    if (botData[category][input]) {
+      setTimeout(() => addMessage("bot", botData[category][input]), 600);
+      return;
     }
   }
 
-  let reply;
-  if (bestMatch && bestScore > 0.3) {
-    reply = bestMatch;
-  } else {
-    reply = botData.default;
-  }
-
+  // Fallback if no exact match
+  let reply = botData.default || "Sorry, I didn’t understand that.";
   setTimeout(() => addMessage("bot", reply), 600);
 }
 
@@ -1523,24 +1533,24 @@ const chatbot1 = document.querySelector('#chatbot');
 const bubble1 = document.getElementById("chatbot-bubble");
 
 if (btn && chatbot1) {
-    btn.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation(); 
-        
-        chatbot.style.display = 'block';
-        const chatbotSection = document.getElementById("chat-window");
-        if (chatbotSection) {
-            chatbotSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    };
-    console.log('Modified btn.onclick to show chatbot');
+  btn.onclick = function(e) {
+    e.preventDefault();
+    e.stopPropagation(); 
+    
+    chatbot.style.display = 'block';
+    const chatbotSection = document.getElementById("chat-window");
+    if (chatbotSection) {
+      chatbotSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+  console.log('Modified btn.onclick to show chatbot');
 }
 
 const data = {
-    btnFound: !!btn,
-    chatbotFound: !!chatbot1,
-    bubbleFound: !!bubble1,
-    chatbotCurrentDisplay: chatbot1 ? chatbot1.style.display : 'N/A'
+  btnFound: !!btn,
+  chatbotFound: !!chatbot1,
+  bubbleFound: !!bubble1,
+  chatbotCurrentDisplay: chatbot1 ? chatbot1.style.display : 'N/A'
 };
 </script>
 </body>

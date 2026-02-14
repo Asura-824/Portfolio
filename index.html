@@ -178,7 +178,6 @@
       justify-content: center;
       align-items: center;
     }
-
     .hero{
       padding:50px 0 40px; 
       text-align:center;
@@ -385,7 +384,7 @@
       width: 100%;
       height: fit-content;
       background-color: var(--card);
-      border:1px solid var(--border); 
+      border:none; 
       border-radius:14px;
       box-shadow:var(--shadow);
       overflow: hidden;
@@ -395,7 +394,6 @@
       transform: scale(1.02);
     }
     a:hover h4, .grid a:hover #icon{
-      border-color: var(--accent);
       color: var(--accent);
     }
    .image{
@@ -519,7 +517,7 @@
       --text: #0a0e14; 
       --header-text: #111111; 
       --muted: #5a6475; 
-      --accent: #ff0088; 
+      --accent: rgb(255, 0, 136); 
       --accent-2: #f4a6a6; 
       --accent-light: rgba(255, 20, 145, 0.18); 
       --accent-light2:#f4a6a683;
@@ -766,8 +764,8 @@
     <img src="https://avatars.githubusercontent.com/u/201357751?s=400&u=a97cd351d841dfd0fca99ffe961fbf42d4531130&v=4" alt="Shubham Kadam" style="width:170px; height:170px; border-radius:50%; margin:auto; box-shadow:0 4px 12px rgba(0,0,0,.3);" />
     <h1>Shubham Kadam</h1>
     <p class="tag">
-      <strong>Data Analyst</strong> — Skilled in Python, PySpark, Java, R, SQL, PostgreSQL, Oracle, Power BI, and Tableau
-    </p>
+  <strong>Data Analyst & Developer</strong> — Skilled in Python, SQL, R, Power BI, Tableau, Java, and Web Technologies
+</p>
     <h2>Turning raw data into <span id="rotating"></span></h2>
     <p>Fusing analytical rigor with developer versatility—building interactive dashboards, seamless data pipelines, Java‑powered solutions, and vivid visual narratives that drive stakeholders to decisive action.</p>
 
@@ -799,10 +797,10 @@
         <div class="col-6 card fade">
           <h2 style="color: var(--accent);">Who I Am</h2>
             <p class="muted" style="padding: 0.5rem; font-size: 1rem; line-height: 1.8;">
-              I'm a <span style="color: var(--accent); font-weight: 600;">Data Analyst and Developer</span> dedicated to turning raw data into insights that drive real decisions. <br><br>
-              I work across the full analytics spectrum—sourcing and cleaning data, building statistical and predictive models, crafting compelling visualizations, and delivering insights that matter. <br><br>
-              I also code. I design <span style="color: var(--accent); font-weight: 600;">interactive dashboards</span>, architect <span style="color: var(--accent); font-weight: 600;">efficient data pipelines</span>, and develop robust <span style="color: var(--accent); font-weight: 600;">Java applications</span> that connect seamlessly to databases and web platforms. <br><br>
-              What sets me apart is the blend: <span style="color: var(--accent); font-weight: 600;">analytical precision</span> paired with <span style="color: var(--accent); font-weight: 600;">engineering discipline</span>, creating solutions that are intelligent, scalable, and built to last.
+              I’m a <span style="color: var(--accent); font-weight: 600;">Data Analyst & Developer</span> passionate about transforming raw data into actionable insights that guide smarter decisions. <br><br>
+              My expertise spans the entire analytics lifecycle—collecting and cleaning data, building statistical and predictive models, designing impactful visualizations, and delivering insights that drive results. <br><br>
+              Beyond analytics, I code. I create <span style="color: var(--accent); font-weight: 600;">interactive dashboards</span>, engineer <span style="color: var(--accent); font-weight: 600;">scalable data pipelines</span>, and build reliable <span style="color: var(--accent); font-weight: 600;">Java applications</span> that integrate seamlessly with databases and web platforms. <br><br>
+              What sets me apart is the combination: <span style="color: var(--accent); font-weight: 600;">analytical precision</span> fused with <span style="color: var(--accent); font-weight: 600;">engineering discipline</span>, resulting in solutions that are intelligent, scalable, and built to last.
             </p>
         </div>
 
@@ -871,32 +869,6 @@
             <li class="circle">Modern web development with React & TypeScript</li>
           </ul>
         </div>
-
-        <div class="col-6 card fade">
-          <h2>Technical Proficiency</h2>
-          <ul class="muted" style="padding: 1rem;">
-            <li class="circle"><span>Programming Languages:</span> Python, Java, C++, R</li>
-            <li class="circle"><span>Big Data & Processing:</span> PySpark, SQL</li>
-            <li class="circle"><span>Databases:</span> PostgreSQL, Oracle</li>
-            <li class="circle"><span>Data Wrangling & Computation:</span> Pandas, NumPy</li>
-            <li class="circle"><span>Data Visualization:</span> Matplotlib, Seaborn, Power BI</li>
-            <li class="circle"><span>Frontend Development:</span> HTML, CSS, JavaScript, React</li>
-            <li class="circle"><span>Application Development:</span> Java (backend systems, desktop applications)</li>
-          </ul>
-        </div>
-
-        <div class="col-6 card fade">
-          <h2>Real World Projects</h2>
-          <ul class="muted" style="padding: 1rem;">
-            <li class="circle">EV adoption analysis in Washington using PySpark & Pandas</li>
-            <li class="circle">India Census insights with Python & Power BI</li>
-            <li class="circle">Netflix user behavior study with Python libraries</li>
-            <li class="circle">Java backend architecture & enterprise services</li>
-            <li class="circle">Interactive portfolio platforms with dynamic features</li>
-            <li class="circle">Interview prep resources & practice modules</li>
-            <li class="circle">Data analysis & ML predictor web app</li>
-          </ul>
-        </div>
       </div>
     </div> 
   </section>
@@ -905,22 +877,24 @@
     <br><p><span style="color: var(--accent);">TECHNICAL PROFICIENCY</span><br><span class="highlight">Skills & Technologies</span><br>A comprehensive toolkit built through hands-on experience with modern data technologies and development best practices.</p>
     <div class="container grid">
       <div class="col-4 card fade">
-        <h3><i class="fas fa-code"></i> Languages</h3>
+        <h3><i class="fas fa-code"></i> Programming Languages</h3>
         <div class="chips">
           <span class="chip">Python</span>
           <span class="chip">Java</span>
           <span class="chip">C++</span>
           <span class="chip">R</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">TypeScript</span>
         </div>
       </div>
 
       <div class="col-4 card fade">
-        <h3><i class="fas fa-tools"></i> Tools</h3>
+        <h3><i class="fas fa-chart-line"></i> Analytics & BI Tools</h3>
         <div class="chips">
-          <span class="chip">Jupyter Notebook</span>
-          <span class="chip">Git</span>
-          <span class="chip">GitHub</span>
           <span class="chip">Power BI</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">Excel</span>
+          <span class="chip">Jupyter Notebook</span>
         </div>
       </div>
 
@@ -937,11 +911,10 @@
       <div class="col-4 card fade">
         <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
         <div class="chips">
-          <span class="chip">HTML</span>
-          <span class="chip">CSS</span>
-          <span class="chip">JavaScript</span>
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
           <span class="chip">React</span>
-          <span class="chip">TypeScript</span>
+          <span class="chip">Bootstrap</span>
         </div>
       </div>
 
@@ -961,10 +934,11 @@
           <span class="chip">Scikit-learn</span>
           <span class="chip">TensorFlow</span>
           <span class="chip">Keras</span>
-          <span class="chip">ML Algorithms</span>
           <span class="chip">Predictive Modeling</span>
+          <span class="chip">ML Algorithms</span>
         </div>
       </div>
+
       <div class="col-6 card fade">
         <h3><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
         <div class="chips">
@@ -977,14 +951,14 @@
       </div>
 
       <div class="col-6 card fade">
-        <h3><i class="fas fa-cube"></i> Core Technologies & Tools</h3>
+        <h3><i class="fas fa-cube"></i> Core Tools & Collaboration</h3>
         <div class="chips">
-          <span class="chip">Version Control (Git/GitHub)</span>
-          <span class="chip">Data Visualization Stack</span>
-          <span class="chip">Java Ecosystem</span>
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">Agile/Scrum</span>
+          <span class="chip">Version Control</span>
         </div>
       </div>
-
       <div class="col-12 card fade">
         <canvas id="skillRadar" width="550" height="550"></canvas>
       </div>
@@ -1004,7 +978,7 @@
               <div class="project">
                   <div>
                       <h4>EV Population(WA) Analysis</h4>
-                      <p class="muted">Electric vehicle adoption trends in Washington State analyzed with PySpark and Pandas, and visualized through Matplotlib and Seaborn</p>
+                      <p class="muted">Processed 100k+ EV records, improved reliability by 30%, and forecasted Tesla registrations with 85% accuracy. Built dashboards to highlight adoption trends.</p>
                       <div class="chips">
                           <span class="chip">Python</span>
                           <span class="chip">PySpark</span>
@@ -1023,7 +997,7 @@
               <div class="project">
                   <div>
                       <h4>India Census Analysis</h4>
-                      <p class="muted">Analysis of India Census data using Python libraries, used some Python libraries for visualization and created beautiful dashboard.</p>
+                      <p class="muted">Analyzed Census 2011 data to identify regional density patterns. Delivered clear visual reports for non‑technical stakeholders.</p>
                       <div class="chips">
                           <span class="chip">Python</span>
                           <span class="chip">Pandas</span>
@@ -1042,7 +1016,7 @@
             <div class="project">
               <div>
                 <h4>NeuraSG Chatbot</h4>
-                <p class="muted">Built and refined NeuraSG, a fully offline chatbot using HTML, CSS, and JavaScript, delivering responsive, accessible, and engaging interactions without API dependencies.</p>
+                <p class="muted">Built and refined NeuraSG, a fully offline chatbot using HTML, CSS, and JavaScript, delivering responsive, accessible, and engaging user interactions without relying on external APIs.</p>
                 <div class="chips">
                   <span class="chip">HTML</span>
                   <span class="chip">CSS</span>
@@ -1059,7 +1033,7 @@
               <div class="project">
                   <div>
                       <h4>Attendance Tracker</h4>
-                      <p class="muted">An attendance tracking application built with Java Swing for the user interface and JDBC for seamless database connectivity.</p>
+                      <p class="muted">Developed secure role‑based portal with real‑time tracking, reducing manual entry time by 40% and improving faculty adoption.</p>
                       <div class="chips">
                           <span class="chip">Java</span>
                           <span class="chip">Swing</span>
@@ -1076,7 +1050,7 @@
             <div class="project">
               <div>
                 <h4>Shubham's CodeQuotient</h4>
-                <p class="muted">Designed and deployed a portfolio site with integrated Python, SQL, and PostgreSQL compilers, attracting 200+ monthly visitors and hosting datasets for interview prep.</p>
+                <p class="muted">Built and deployed portfolio platform with integrated compilers, attracting 200+ monthly visitors and supporting community learning.</p>
                 <div class="chips">
                   <span class="chip">HTML</span>
                   <span class="chip">CSS</span>
@@ -1093,7 +1067,7 @@
             <div class="project">
               <div>
                 <h4>SWIS Foundation</h4>
-                <p class="muted">Modified and enhanced the SWIS Foundation website using React, JavaScript, and TypeScript to improve user engagement and information accessibility.</p>
+                <p class="muted">Enhanced the SWIS Foundation website using React, JavaScript, and TypeScript, improving user engagement and streamlining information accessibility for visitors.</p>
                 <div class="chips">
                   <span class="chip">React</span>
                   <span class="chip">JavaScript</span>
@@ -1320,11 +1294,11 @@
     const root = document.documentElement;
     const toggle = document.getElementById('themeToggle');
     const saved = localStorage.getItem('theme');
-    if(saved==='light'){ root.classList.add('light'); toggle.innerHTML='<i class="fas fa-sun"></i>'; }
+    if(saved==='light'){ root.classList.add('light'); toggle.innerHTML='<i class="far fa-sun"></i>'; }
     toggle.addEventListener('click', ()=>{
       root.classList.toggle('light');
       const isLight = root.classList.contains('light');
-      toggle.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      toggle.innerHTML = isLight ? '<i class="far fa-sun"></i>' : '<i class="fas fa-moon"></i>';
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
 

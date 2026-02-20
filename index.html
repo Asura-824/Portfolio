@@ -11,18 +11,18 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
-      --bg: #0d1117; 
+      --bg: #0b0f14; 
       --card: #161b22; 
-      --text: #e6edf3; 
+      --text: #e0e6ed; 
       --header-text: #ffffff; 
-      --muted: #9aa5b8; 
-      --accent: #3b82f6; 
-      --accent-2: #5cc8ff; 
-      --accent-light: rgba(59, 130, 246, 0.25);
-      --accent-light2:#5cc9ff69; 
-      --border: #2d333b; 
-      --header-bg: linear-gradient(180deg, rgba(13,17,23,.9), rgba(13,17,23,.7));
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.151); 
+      --muted: #8b96a9; 
+      --accent: #3b82f6;
+      --accent-2: #2ec5e0; 
+      --accent-light: rgba(59, 130, 246, 0.2); 
+      --accent-light2: rgba(0, 194, 209, 0.25); 
+      --border: #2a2f36; 
+      --header-bg: linear-gradient(180deg, rgba(11,15,20,.9), rgba(11,15,20,.7));
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.25); 
     }
     *{
         box-sizing:border-box;
@@ -37,34 +37,35 @@
       display: flex;
       flex-direction: column;
       border-radius: 10px;
+      border: none;
       font-size: 0.9rem;
       font-family: "Courier New", Courier, monospace;
       width: 100%;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
     }
     .responsediv::-webkit-scrollbar {
       display: none;
     }
     .responsediv pre {
-      background-color: var(--bg);
+      background-color: var(--card);
       color: var(--header-text);
-      padding: 10px;
+      padding: 1rem;
       width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
       margin: 0;
-      border-radius: 0 0 6px 6px;
+      border-radius: 0 0 10px 10px;
       overflow-x: auto;
     }
-    /* Header bar */
     .response-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: var(--accent);
-      color: #fff;
+      background-color: var(--card);
+      color: var(--header-text);
+      border-bottom: 1px solid var(--border);
       padding: 0.5rem 1rem;
-      border-radius: 6px 6px 0 0;
+      border-radius: 10px 10px 0 0;
     }
 
     /* Title text */
@@ -86,11 +87,10 @@
     }
 
     .copy-btn:hover {
-      background-color: #106ebe;
+      background-color: var(--accent-light);
     }
 
     .copy-btn:active {
-      background-color: #005a9e;
       transform: scale(0.97);
     }
 
@@ -181,7 +181,7 @@
         margin: auto;
         justify-content: center;
         color: var(--header-text);
-        background:linear-gradient(135deg, var(--accent), var(--accent-2));
+        background:linear-gradient(90deg, var(--accent), var(--accent-2));
         box-shadow:var(--shadow);
     }
     .brand h1{
@@ -269,6 +269,7 @@
     .tag:hover{
       background:linear-gradient(135deg, var(--accent), var(--accent-2));
       color:#0b0f14;
+      border: none;
       transition: transform 0.3s;
     }
     .tag1{
@@ -560,19 +561,19 @@
       opacity:1; 
       transform:none;
     }
-    .light {
+    .light { 
       --bg: #f5f7fa; 
       --card: #ffffff; 
       --text: #0a0e14; 
       --header-text: #111111; 
       --muted: #5a6475; 
       --accent: rgb(255, 0, 136); 
-      --accent-2: #f4a6a6; 
+      --accent-2: #ffb3c6; 
       --accent-light: rgba(255, 20, 145, 0.18); 
-      --accent-light2:#f4a6a683;
-      --header-bg: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.7));
+      --accent-light2:rgba(255, 179, 198, 0.25); 
+      --header-bg: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.7)); 
       --border: #dce2eb; 
-      --shadow: 0 6px 20px rgba(0, 0, 0, 0.151);
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.151); 
     }
     #contact {
       display: flex;
@@ -695,8 +696,8 @@
       right: 20px;
       border: 3px solid var(--accent);
       width: 300px;
-      height: 400px;
-      background: var(--card);
+      height: 350px;
+      background: var(--bg);
       box-shadow: var(--shadow);
       border-radius: 10px;
       display: none;
@@ -708,7 +709,7 @@
     }
 
     #messages {
-      height: 300px;
+      height: 250px;
       overflow-y: auto;
       scrollbar-width: none;
       margin-bottom: 10px;
@@ -721,9 +722,11 @@
     }
 
     #messages .user .text {
-      background: var(--accent);
-      color: rgb(0, 0, 0);
+      background: var(--accent-light);
+      color: var(--header-text);
       padding: 5px 10px;
+      font-weight: 500;
+      font-size: 0.9rem;
       border-radius: 5px;
       display: inline-block;
     }
@@ -733,7 +736,6 @@
       padding: 5px 10px;
       width: 100%;
       color: var(--header-text);
-      border-radius: 5px;
       display: inline-block;
     }
 
@@ -747,7 +749,7 @@
     }
 
     #send-btn {
-      width: 25%;
+      width: 28%;
       padding: 5px;
       background: var(--accent-2);
       color: black;
@@ -762,7 +764,7 @@
       flex-direction: column;       
       justify-content: center;      
       align-items: center;          
-      padding: 2rem;
+      padding: 10px;
       top: 50%;     
       color: var(--header-text);                
       left: 50%;    
@@ -863,7 +865,7 @@
                 <i class="fa-solid fa-chart-line"></i>
               </div>
               <div>
-                <p><span style="color: var(--header-text); font-weight: 600;">Dashboards</span><br>Built KPI dashboards where clarity meets speed, shortening reporting cycles by 40%.</p>
+                <p><span style="color: var(--header-text); font-weight: 600; font-size: 1rem;">Dashboards</span><br>Built KPI dashboards where clarity meets speed, shortening reporting cycles by 40%.</p>
               </div>
             </div>
             <div class="muted1">
@@ -871,7 +873,7 @@
                 <i class="fa-solid fa-database"></i>
               </div>
               <div>
-                <p><span style="color: var(--header-text); font-weight: 600;">Pipelines</span><br>Streamlined ETL workflows with PySpark to handle 10M+ rows efficiently</p>
+                <p><span style="color: var(--header-text); font-weight: 600; font-size: 1rem;">Pipelines</span><br>Streamlined ETL workflows with PySpark to handle 10M+ rows efficiently</p>
               </div>
             </div>
             <div class="muted1">
@@ -879,7 +881,7 @@
                 <i class="fa-solid fa-microchip"></i>
               </div>
               <div>
-                <p><span style="color: var(--header-text); font-weight: 600;">Visualization</span><br>Created intuitive visualizations that made complex datasets easy to understand.</p>
+                <p><span style="color: var(--header-text); font-weight: 600; font-size: 1rem;">Visualization</span><br>Created intuitive visualizations that made complex datasets easy to understand.</p>
               </div>
             </div>
             <div class="muted1">
@@ -887,7 +889,7 @@
                 <i class="fa-solid fa-trophy"></i>
               </div>
               <div>
-                <p><span style="color: var(--header-text); font-weight: 600;">Java Apps</span><br>Built secure, user-friendly desktop tools with Swing/JDBC integrated with PostgreSQL</p>
+                <p><span style="color: var(--header-text); font-weight: 600; font-size: 1rem;">Java Apps</span><br>Built secure, user-friendly desktop tools with Swing/JDBC integrated with PostgreSQL</p>
               </div>
             </div>
           </div>
@@ -1323,13 +1325,15 @@
         <a href="mailto:shubham85kadam@gmail.com"><i class="fa-solid fa-envelope icon" style="font-size: 1.5rem;"></i></a>
       </div>
     </div>
-    <div class="container" style="padding: 1rem; font-size: 16px;">
-      © <span id="year"></span> Shubham Kadam <br> Built with <span style="color: var(--accent);"><i class="fa-solid fa-heart"></i></span> using HTML, CSS & JS
-        <p style="font-style: italic;">
+    <div class="container" style="padding: 1.6rem; font-size: 14px; min-height: 120px; text-align: center;">
+      <p style="margin: 0;">
+        © <span id="year"></span> Shubham Kadam Built with <span style="color: var(--accent);"><i class="fa-solid fa-heart"></i></span> using HTML, CSS &amp; JS
+        <blockquote style="font-style: italic; font-size: 15px; color: var(--text); text-align: center; padding: 0%;">
           <span style="font-size: 24px; color: var(--accent);">&ldquo;</span>
-            Every commit is a quiet victory, not through conflict, but through forgiveness—merging errors into wisdom.
+            Each commit is a quiet triumph, where mistakes turn into wisdom.
           <span style="font-size: 24px; color: var(--accent);">&rdquo;</span>
-        </p>
+        </blockquote>
+      </p>
     </div>
   </footer>
 
@@ -1573,6 +1577,13 @@ function normalize(str) {
 function respondToUser(input) {
   input = normalize(input);
 
+  if (input === "help") {
+    const helpInfo = botData.help; // get help object from JSON
+    const options = [helpInfo.overview, helpInfo.capabilities];
+    const helpText = options[Math.floor(Math.random() * options.length)];
+    setTimeout(() => addMessage("bot", helpText), 600);
+    return;
+  }
   let topic = null;
   const patterns = [
     { prefix: "tell me about ", strip: "tell me about " },
@@ -1582,7 +1593,13 @@ function respondToUser(input) {
     { prefix: "describe ", strip: "describe " },
     { prefix: "info on ", strip: "info on " },
     { prefix: "details about ", strip: "details about " },
-    { prefix: "topic: ", strip: "topic: " }
+    { prefix: "give me information on ", strip: "give me information on " },
+    { prefix: "i want to know about ", strip: "i want to know about " },
+    { prefix: "could you explain ", strip: "could you explain " },
+    { prefix: "help me to understand ", strip: "help me to understand " },
+    { prefix: "show me the detailed information of ", strip: "show me the detailed information of " },
+    { prefix: "overview of ", strip: "overview of " },
+    { prefix: "meaning of ", strip: "meaning of " },
   ];
 
   for (const p of patterns) {
@@ -1607,6 +1624,7 @@ function respondToUser(input) {
       return;
     }
   }
+  setTimeout(() => addMessage("bot", "Error: Unknown command. Type 'help' for more information."), 600);
 }
 
 document.addEventListener("click", (event) => {

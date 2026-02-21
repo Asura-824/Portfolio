@@ -24,6 +24,15 @@
       --header-bg: linear-gradient(180deg, rgba(11,15,20,.9), rgba(11,15,20,.7));
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.25); 
     }
+    .keyword   { color: var(--accent); }       
+    .type      { color: #4ec9b0; }             
+    .classname { color: var(--accent); }     
+    .string    { color: #90ff5d; }            
+    .boolean   { color: #dcdcaa; }             
+    .method    { color: #dcdcaa; }             
+    .comment   { color: var(--muted); font-style: italic; } 
+    .annotation{ color: #ff0eeb; }             
+    .bracket   { color: #d4d4d4; }  
     *{
         box-sizing:border-box;
         font-family:Arial, Helvetica, sans-serif;
@@ -141,9 +150,12 @@
     }
     .container{
         width:100%; 
-        max-width:1300px; 
+        max-width:1200px; 
         margin:0 auto; 
         padding:0 2px;
+    }
+    .hero{
+      width: 100%;
     }
     header{
         position:sticky; 
@@ -227,65 +239,17 @@
       justify-content: center;
       align-items: center;
     }
-    .hero{
-      padding:50px 0 40px; 
-      text-align:center;
-      width: 100%;
-    }
-    .hero h1{
-      font-size: clamp(2rem, 6vw, 5rem);
-      padding: 0%;
-      margin: 0%;
-    }
-    .hero img:hover{
-      transform:scale(1.10);
-      transition: ease-in 1s;
-    }
-    .hero h2{
-      font-size: clamp(0.8rem, 5vw, 2rem); 
-      margin:10px 0;
-    }
-    .hero p{
-      color:var(--muted); 
-      max-width:720px; 
-      margin:0 auto 18px;
-    }
-    .tags{
-      display:flex; 
-      flex-wrap:wrap; 
-      gap:10px; 
-      justify-content:center; 
-      margin-top:14px;
-    }
     .tag{
-      border:1px solid var(--border); 
-      background:var(--card);
-      width: 90%;
-      color:var(--muted);
-      padding:6px 10px; 
-      border-radius:999px; 
-      font-size:14px;
-    }
-    .tag:hover{
+      width: fit-content;
+      margin: 0.25rem 0;
+      text-align: center;
       background:linear-gradient(135deg, var(--accent), var(--accent-2));
       color:#0b0f14;
       border: none;
       transition: transform 0.3s;
-    }
-    .tag1{
-      border:1px solid var(--border); 
-      background:var(--card); 
-      color:var(--muted);
-      padding:6px 10px; 
+      padding:15px 10px; 
       border-radius:999px; 
-      font-size:14px;
-    }
-    .cta{
-      display:flex; 
-      gap:12px; 
-      justify-content:center; 
-      margin-top:18px; 
-      flex-wrap:wrap;
+      font-size: 18px;
     }
     .btn{
       padding:10px 14px; 
@@ -300,15 +264,14 @@
       border-radius: 50px;
       border:1px solid var(--border);
       background:var(--card); 
-      color:var(--text); 
+      color:white; 
       cursor:pointer;
     }
     .btn.primary{
-      background:linear-gradient(135deg, var(--accent), var(--accent-2)); 
-      color:#0b0f14; 
+      color:#ffffff; 
       border:none;
     }
-    section{
+    #about, #skills, #projects, #certifications, #contact{
       padding:40px 0; 
       border-top:1px solid var(--border);
     }
@@ -575,6 +538,17 @@
       --border: #dce2eb; 
       --shadow: 0 6px 20px rgba(0, 0, 0, 0.151); 
     }
+
+    .light .keyword { color: var(--accent); }          
+    .light .type { color: #007acc; }                   
+    .light .classname { color: var(--accent); }       
+    .light .string { color: #d14; }                 
+    .light .boolean { color: #795548; }            
+    .light .method { color: #6f42c1; }              
+    .light .comment { color: #5a6475; font-style: italic; } 
+    .light .annotation { color: #e36209; }            
+    .light .bracket { color: #0a0e14; }  
+
     #contact {
       display: flex;
       flex-direction: column;       
@@ -586,16 +560,16 @@
     .condetail{
       display: flex;
       width: 500px;
-      height: 550px;
+      height: 560px;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 1.1rem;
     }
     .condetail > div{
       width: 500px;
     }
     #contact .card1{
       width: 600px;
-      height: 550px;
+      height: 560px;
       display: flex;
       flex-direction: column;
       margin: auto;
@@ -609,6 +583,9 @@
     @media (max-width: 768px) {
       .container{
         width: 95%;
+      }
+      .hero{
+        padding: 1rem;
       }
       #contact {
         width: 95%;
@@ -664,7 +641,7 @@
         gap: 2rem;
       }
     }
-    /* Chat bubble */
+
     #chatbot-bubble {
       position: fixed;
       bottom: 20px;
@@ -689,7 +666,6 @@
       transform: scale(1.1);
     }
 
-    /* Chat window */
     #chatbot {
       position: fixed;
       bottom: 80px;
@@ -790,6 +766,95 @@
     #chatbot-header h4{
       font-size: 1.2rem;
     }
+
+    .container1 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 1rem auto;
+        align-items: center;
+        max-width: 1200px;
+        width: 95%;
+        min-height: 80vh; 
+    }
+    .code-block {
+      background: var(--card);
+      color: var(--muted);
+      font-family: "Fira Code", monospace;
+      padding: 1.5rem;
+      text-align: left;
+      width: 100%;
+      font-size: clamp(1rem, 1.6vw, 1rem);
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .file-tab {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--bg);
+      padding: 0.4rem 1rem;
+      border-top-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    pre {
+      margin-top: 2rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+
+    /* Cursor */
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 18px;
+      background: var(--accent);
+      animation: blink 1s infinite;
+      margin-left: 4px;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    .portrait {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 30px var(--accent);
+    }
+
+    /* CTA buttons */
+    .cta{
+      display:flex; 
+      gap:12px; 
+      justify-content:center;  
+      flex-wrap:wrap;
+    }
+    .btn {
+      padding: 0.8rem 1.5rem;
+      width: fit-content;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn {
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
   </style>
 </head>
 <body>
@@ -811,34 +876,63 @@
     </div>
   </header>
 
-  <section class="hero">
-    <img src="https://avatars.githubusercontent.com/u/201357751?s=400&u=a97cd351d841dfd0fca99ffe961fbf42d4531130&v=4" alt="Shubham Kadam" style="width:170px; height:170px; border-radius:50%; margin:auto; box-shadow:0 4px 12px rgba(0,0,0,.3);" />
-    <h1>Shubham Kadam</h1>
-    <p class="tag">
-  <strong>Data Analyst & Developer</strong> — Skilled in Python, SQL, R, Power BI, Tableau, Java, and Web Technologies
-</p>
-    <h2>Turning raw data into <span id="rotating"></span></h2>
-    <p>
+<section class="hero">
+  <div>
+    <div class="container1">
+    <div style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; margin: 0%;">
+  <!-- Portrait -->
+  <img class="portrait" 
+      src="https://avatars.githubusercontent.com/u/201357751?s=400&u=a97cd351d841dfd0fca99ffe961fbf42d4531130&v=4" 
+      alt="Shubham Kadam - Data Analyst & Developer"
+    />
+  <h1 style="color: var(--header-text); text-align: center; font-size: clamp(2rem, 4vw, 5rem); margin: 0%;">
+    Shubham Kadam
+  </h1>
+  <p class="tag">
+    <strong>Data Analyst & Developer</strong>
+  </p>
+  <h2 style="font-size: clamp(1.2rem, 3vw, 1.5rem); text-align: center; margin: 0.25rem 0;">Turning raw data into <span id="rotating"></span></h2>
+  <p style="margin: 0.3rem auto 1rem; line-height: 1.4; text-align: center;">
       Blending analytics and development expertise to build dashboards, streamline pipelines, and craft Java‑powered solutions that turn data into decisive stories.
-    </p>
-    <div class="tags">
-      <span class="tag1">Predictive modeling</span>
-      <span class="tag1">Interactive dashboards</span>
-      <span class="tag1">Data storytelling</span>
-      <span class="tag1">PostgreSQL</span>
-      <span class="tag1">Java Swing/JDBC</span>
-      <span class="tag1">Web design</span>
-    </div>
-    <div class="cta">
-      <a class="btn primary" href="#projects"><i class="fa-solid fa-diagram-project"></i>View Projects</a>
-      <a class="btn" href="#contact"><i class="fa-solid fa-address-card"></i>Contact me</a>
-      <a class="btn" href="https://github.com/ShubhamK-0904"><i class="fa-brands fa-github" style="font-size: 20px;"></i>GitHub Profile</a>
-      <a class="btn" href="documents/RESUME.pdf" target="_blank">
-  <i class="fa-solid fa-file-lines"></i>Open Resume
-</a>
+  </p>
+  <div class="cta">
+    <a href="#projects" class="btn primary"><i class="fa-solid fa-diagram-project"></i>View Projects</a>
+    <a href="https://github.com/ShubhamK-0904/" class="btn"><i class="fa-brands fa-github" style="font-size: 20px;"></i>GitHub Profile</a>
+    <a href="documents/RESUME.pdf" class="btn"><i class="fa-solid fa-file-lines"></i>Open Resume</a>
+    <a href="#contact" class="btn"><i class="fa-solid fa-address-card"></i>Contact Me</a>
+  </div>
+</div>
+    <div class="code-block">
+      <div class="file-tab">Developer.java</div>
 
+      <pre>
+<span class="comment">/**</span>
+<span class="comment"> * @author</span> <span class="annotation">Shubham Kadam</span>
+<span class="comment"> * @role</span> <span class="annotation">Data Analyst & Developer</span>
+<span class="comment"> */</span>
+
+<span class="keyword">public</span> <span style="color: var(--muted);">class</span> <span class="annotation">Data Analyst</span> <span class="classname">extends</span> <span class="annotation">Developer</span> <span class="bracket">{</span>
+
+    <span class="comment">// Building scalable systems & turning data into insights</span>
+
+    <span class="keyword">private</span> <span class="type">String</span> name = <span class="string">"Shubham Kadam"</span>;
+    <span class="keyword">private</span> <span class="type">String[ ]</span> skills = <span class="bracket">{</span><span class="string">"Python"</span>, <span class="string">"SQL"</span>, <span class="string">"R"</span>, <span class="string">"Power BI"</span>, <span class="string">"Tableau"</span>, <span class="string">"Java"</span>, <span class="string">"Web Technologies"</span><span class="bracket">}</span>;
+    <span class="keyword">private</span> <span class="type">boolean</span> isAvailable = <span class="boolean">true</span>;
+
+    <span class="keyword">public</span> <span class="type">void</span> buildDashboard() <span class="bracket">{</span>
+        <span class="type">System</span>.out.<span class="method">println</span>(<span class="string">"Crafting interactive dashboards..."</span>);
+    <span class="bracket">}</span>
+
+    <span class="keyword">public</span> <span class="type">void</span> tellStory() <span class="bracket">{</span>
+        <span class="type">System</span>.out.<span class="method">println</span>(<span class="string">"Transforming data into decisive stories!"</span>);
+    <span class="bracket">}</span>
+<span class="bracket">}</span>
+<span class="cursor"></span>
+      </pre>
     </div>
-  </section>
+  </div>
+  </div>
+</section>
 
   <section id="about">
     <br><p id="p1"><span style="color: var(--accent);">ABOUT ME</span><br><span class="highlight">Data Analyst & Developer</span></p>
@@ -1038,7 +1132,7 @@
                           <span class="chip">Matplotlib</span>
                           <span class="chip" style="background-color: var(--accent-light2);">+1</span>
                       </div>
-                      <p><a style="background: var(--accent); color: black; border-radius: 10px;" class="btn" href="https://github.com/ShubhamK-0904/Electric-Vehicle-WA" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
+                      <p><a style="background: var(--accent); color: white; border-radius: 10px;" class="btn" href="https://github.com/ShubhamK-0904/Electric-Vehicle-WA" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
                   </div>
               </div>
           </div>
@@ -1057,7 +1151,7 @@
                           <span class="chip">Matplotlib</span>
                           <span class="chip" style="background-color: var(--accent-light2);">+2</span>
                       </div>
-                      <p><a style="background: var(--accent); color: black; border-radius: 10px;" class="btn" href="https://github.com/ShubhamK-0904/IND-Census-2011--analysis" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
+                      <p><a style="background: var(--accent); color: white; border-radius: 10px;" class="btn" href="https://github.com/ShubhamK-0904/IND-Census-2011--analysis" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
                   </div>
               </div>
           </div>
@@ -1068,13 +1162,12 @@
             <div class="project">
               <div>
                 <h4>NeuraSG Chatbot</h4>
-                <p class="muted">Built and refined NeuraSG, a fully offline chatbot using HTML, CSS, and JavaScript, delivering responsive, accessible, and engaging user interactions without relying on external APIs.</p>
-                <div class="chips">
+                <p class="muted">Created <strong>NeuraSG</strong>, an offline chatbot built with HTML, CSS, and JavaScript — delivering fast, accessible, and engaging user experiences without external APIs.</p>                <div class="chips">
                   <span class="chip">HTML</span>
                   <span class="chip">CSS</span>
                   <span class="chip">JavaScript</span>
                 </div>
-                <p><a style="background: var(--accent); color: black; border-radius: 10px;" class="btn" id="view-project-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
+                <p><a style="background: var(--accent); color: white; border-radius: 10px;" class="btn" id="view-project-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
               </div>
             </div>
           </div>
@@ -1091,7 +1184,7 @@
                           <span class="chip">Swing</span>
                           <span class="chip">JDBC</span>
                       </div>
-                      <p><a style="background: var(--accent); color: black; border-radius: 10px;" class="btn" href="https://github.com/ShubhamK-0904/RJAttendPortal" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
+                      <p><a style="background: var(--accent); color: white; border-radius: 10px;" class="btn" href="https://github.com/ShubhamK-0904/RJAttendPortal" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
                   </div>
               </div>
           </div>
@@ -1108,7 +1201,7 @@
                   <span class="chip">CSS</span>
                   <span class="chip">JavaScript</span>
                 </div>
-                <p><a style="background: var(--accent); color: black; border-radius: 10px;" class="btn" href="https://codequot.netlify.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
+                <p><a style="background: var(--accent); color: white; border-radius: 10px;" class="btn" href="https://codequot.netlify.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
               </div>
             </div>
           </div>
@@ -1125,7 +1218,7 @@
                   <span class="chip">JavaScript</span>
                   <span class="chip">TypeScript</span>
                 </div>
-                <p><a style="background: var(--accent); color: black; border-radius: 10px;" class="btn" href="https://www.theswis.org/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
+                <p><a style="background: var(--accent); color: white; border-radius: 10px;" class="btn" href="https://www.theswis.org/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a></p>
               </div>
             </div>
           </div>
@@ -1274,7 +1367,11 @@
             </a>
           </div>  
           <div class="col-8 card fade">
-            <p class="muted"><span style="color: var(--accent);">// Current status</span><br>boolean <span style="color:var(--header-text)">isAvailable </span> =<span style="color: var(--accent);"> true</span> ;<br>String <span style="color: var(--header-text);">preferredWork</span> =<span style="color: var(--accent);"> "Remote / Hybrid"</span> ;</p>
+            <p class="muted">
+              <span class="comment">// Current status</span><br>
+              <span class="keyword">private</span> <span class="type">boolean</span> isAvailable = <span class="boolean">true</span>;<br>
+              <span class="keyword">private</span> <span class="type">String</span> preferredWork = <span class="string">"Remote / Hybrid"</span>;
+            </p>          
           </div>
         </div>
         <div class="card1">
@@ -1371,7 +1468,7 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-     const skills = [
+ const skills = [
     "actionable insights that drive decisions",
     "interactive dashboards that engage users",
     "scalable pipelines that streamline workflow",
@@ -1388,15 +1485,6 @@
   setInterval(rotateSkills, 2000);
   rotateSkills();
   
-  document.querySelectorAll('.tag').forEach(tag => {
-    tag.addEventListener('mouseover', () => {
-      tag.style.transform = 'scale(1.1)';
-      tag.style.transition = 'transform 0.3s';
-    });
-    tag.addEventListener('mouseout', () => {
-      tag.style.transform = 'scale(1)';
-    });
-  });
 
 const ctx = document.getElementById("skillRadar");
 

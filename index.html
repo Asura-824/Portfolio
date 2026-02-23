@@ -598,8 +598,10 @@
         display: flex;
       }
       .nav .toggle{
-        font-size: 0.9rem;
+        font-size: 1rem;
         width: 39px;
+        background: transparent;
+        border: none;
         height: 39px;
       }
       .hero{
@@ -938,8 +940,8 @@
         </ul>
       </nav>
       <div class="social-links" style="gap: 12px;">
-        <a href="https://github.com/ShubhamK-0904/"><i class="fab fa-github icon" style="font-size: 1.5rem;"></i></a>
-        <a href="https://www.linkedin.com/in/shubham-s-kadam/"><i class="fab fa-linkedin icon" style="font-size: 1.5rem;"></i></a>
+        <a href="https://github.com/ShubhamK-0904/"><i class="fab fa-github icon" style="font-size: 1.3rem; background: transparent;"></i></a>
+        <a href="https://www.linkedin.com/in/shubham-s-kadam/"><i class="fab fa-linkedin icon" style="font-size: 1.3rem; background: transparent;"></i></a>
         <button class="toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
       </div>
     </div>
@@ -1401,7 +1403,9 @@ Highlights of certifications and achievements, showcasing growth, learning, and 
           <div class="code-block fade-in">
   <div class="file-tab">Certifications.sql</div>
   <pre>
-<span class="comment">-- Certifications earned</span>
+<span class="keyword">CREATE DATABASE</span> <span class="classname">PortfolioDB</span>;
+
+<span class="keyword">USE</span> <span class="classname">PortfolioDB</span>;
 
 <span class="keyword">CREATE TABLE</span> <span class="classname">Certifications</span> <span class="bracket">(</span>
     <span class="type">id</span> <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
@@ -1409,15 +1413,23 @@ Highlights of certifications and achievements, showcasing growth, learning, and 
     <span class="type">provider</span> <span class="keyword">VARCHAR</span>(100)
 <span class="bracket">);</span>
 
-<span class="comment">-- Inserting the Records</span>
-
 <span class="keyword">INSERT INTO</span> <span class="classname">Certifications</span> <span class="keyword">(id, title, provider)</span> <span class="keyword">VALUES</span>
     <span class="bracket">(</span><span class="number">1</span>, <span class="string">'Data Science with Python'</span>, <span class="string">'Internshala'</span><span class="bracket">)</span>,
     <span class="bracket">(</span><span class="number">2</span>, <span class="string">'Software Development BootCamp'</span>, <span class="string">'Floydee Foundation'</span><span class="bracket">)</span>,
     <span class="bracket">(</span><span class="number">3</span>, <span class="string">'Introduction to Generative AI Studio'</span>, <span class="string">'SimpliLearn'</span><span class="bracket">)</span>
 <span class="keyword">;</span>
 
-<span class="comment">-- Query all certifications</span>
+<span class="keyword">FLUSH TABLES</span> <span class="keyword">WITH READ LOCK</span>;
+
+<span class="keyword">UNLOCK TABLES</span>;
+
+<span class="keyword">LOCK TABLES</span> Certifications <span class="keyword">WRITE</span>;
+
+<span class="keyword">UPDATE</span> Certifications <span class="keyword">SET</span> provider = <span class="string">'SimpliLearn / SkillUp'</span>, title = <span class="string">'Introduction to Generative AI Studio (Updated)'</span> <span class="keyword">WHERE</span> id = <span class="number">3</span>;
+
+<span class="keyword">UNLOCK TABLES</span>;
+
+<span class="keyword">LOCK TABLES</span> Certifications <span class="keyword">READ</span>;
 
 <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="classname">Certifications</span>;
 <span class="cursor"></span></pre>
@@ -1442,8 +1454,8 @@ Highlights of certifications and achievements, showcasing growth, learning, and 
       </tr>
       <tr>
         <td style="padding: 8px; border: 1px solid #ccc;">3</td>
-        <td style="padding: 8px; border: 1px solid #ccc;">Introduction to Generative AI Studio</td>
-        <td style="padding: 8px; border: 1px solid #ccc;">SimpliLearn</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">Introduction to Generative AI Studio (Updated)</td>
+        <td style="padding: 8px; border: 1px solid #ccc;">SimpliLearn / SkillUp</td>
       </tr>
     </tbody>
 </table>
@@ -1452,9 +1464,7 @@ Highlights of certifications and achievements, showcasing growth, learning, and 
         <div class="col-6">
           <div class="code-block fade-in">
   <div class="file-tab">Achievements.py</div>
-  <pre>
-<span class="comment"># Achievements stored in a Spark DataFrame</span>
-
+<pre>
 <span class="keyword">from</span> <span class="type">pyspark.sql</span> <span class="keyword">import</span> SparkSession
 
 spark = SparkSession.builder.appName(<span class="string">"PortfolioAchievements"</span>).getOrCreate()
@@ -1469,10 +1479,23 @@ columns = [<span class="string">"id"</span>, <span class="string">"achievement"<
 
 achievements_df = spark.createDataFrame(data, columns)
 
-<span class="comment"># Output</span>
+rows = achievements_df.collect()
 
-achievements_df.show(truncate=<span class="boolean">False</span>)
-<span class="cursor"></span></pre>
+html_output = <span class="string">"&lt;table border='1' cellspacing='0' cellpadding='8'&gt;"</span>
+
+html_output += <span class="string">"&lt;thead&gt;&lt;tr&gt;&lt;th&gt;id&lt;/th&gt;&lt;th&gt;achievement&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;"</span>
+
+<span class="keyword">for</span> row <span class="keyword">in</span> rows:
+    html_output += f<span class="string">"&lt;tr&gt;&lt;td&gt;{row['id']}&lt;/td&gt;&lt;td&gt;{row['achievement']}&lt;/td&gt;&lt;/tr&gt;"</span>
+
+html_output += <span class="string">"&lt;/tbody&gt;&lt;/table&gt;"</span>
+
+<span class="keyword">with</span> open(<span class="string">"achievements.html"</span>, <span class="string">"w"</span>, encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:
+    f.write(html_output)
+
+print(html_output)
+<span class="cursor"></span>
+</pre>
 <table style="border-collapse: collapse; font-family: monospace; margin-top: 1rem;">
     <thead>
       <tr style="background: var(--accent); color: #fff;">
